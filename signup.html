@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>SignUp Page</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+</head>
+
+<body>
+   <nav class="nav">
+      <div class="nav-links-container">
+         <a href="#" class="nav__link">
+            <span class="nav__text">Welcome</span>
+            <ion-icon name="welcome-outline" size="large"></ion-icon>
+          </a>
+          <a href="#" class="nav__link">
+            <span class="nav__text">Event settings</span>
+            <ion-icon name="location-outline" size="large"></ion-icon>
+          </a>
+          <a href="#" class="nav__link">
+            <span class="nav__text">Settings</span>
+            <ion-icon name="settings-outline" size="large"></ion-icon>
+          </a>
+          <a href="#" class="nav__link">
+            <span class="nav__text">Contact Us</span>
+            <ion-icon name="call-outline" size="large"></ion-icon>
+          </a>
+          <a href="signup.html" class="nav__link">
+           <span class="nav__text">signup</span>
+           <ion-icon name="h1-outline" size="large"></ion-icon>
+         </a>
+         <a href="login.html" class="nav__link">
+           <span class="nav__text">login</span>
+           <ion-icon name="h2-outline" size="large"></ion-icon>
+         </a>
+      </div>
+    </nav>
+    <main class="main">
+      <i onmouseover="toggleNav()" data-state="closed" class="fas fa-bars"></i>
+    </main>
+
+   <form>
+      <label for="full-name">Full Name:</label><br>
+      <input type="text" class="name" required><br>
+      <br>
+      <label for="username">Username:</label><br>
+      <input type="text" class="username" required><br>
+      <br>
+      <label for="grade">Grade:</label><br>
+      <select class="grade" required>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <br><br>
+      <label for="password">Password:</label><br>
+      <input type="password" class="pwd1" required><br>
+      <br>
+      <label for="confirm-password">Confirm Password:</label><br>
+      <input type="password" class="pwd2" required><br>
+      <br>
+      <input type="submit" value="Sign Up" required>
+    </form>
+    <script src = "signupPreload.js"></script>
+    <script src = "hamburgerPreload.js"></script>
+</body>
+</html>

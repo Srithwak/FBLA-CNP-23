@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+   <!-- hiyaaaa -->
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>event Page</title>
+</head>
+
+<body>
+
+   <form>
+      <label for="event-name">Full Name:</label><br>
+      <input type="text" class="name" onkeyup="filter()"><br>
+      <br>
+
+      <label for="sport">Is this a sports event?</label>
+      <input type="radio" name="eventType" onchange = filter() class="sportsEvent">
+
+      <label for="nonSport">Is this a non-sports event?</label>
+      <input type="radio" name="eventType" onchange = "filter()" class="nonSportsEvent">
+<br><br>
+      <label for="points">pointsgained:</label><br>
+      <input type="number" min = "0" class="pointsGained" onkeyup = "filter()"><br>
+      <br>
+      <label for="limit">limit:</label><br>
+      <input type="number" min = "0" class="limit" onkeyup = "filter()"><br>
+      <br><br>
+    </form>
+   
+    <table id="event-table">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>pointsGained</th>
+              <th>limit</th>
+              <th>actions</th>
+          </tr>
+      </thead>
+      <tbody></tbody>
+  </table>
+  <button onclick="addEvent()">Add New Event</button>
+  
+
+
+<br><br><br><br><br><br><br>
+
+
+    <form class = "prizePage">
+        <label for="event-name">Name:</label><br>
+        <input type="text" class="name1" onkeyup="filterPrizes()"><br>
+        <br>
+  
+        <label for="type">Type:</label><br>
+        <input type="text" class="type1" onkeyup="filterPrizes()"><br>
+        <br>
+  
+        <label for="points">Points:</label><br>
+        <input type="number" min="0" class="points1" onkeyup="filterPrizes()"><br>
+        <br>
+     </form>
+  
+     <table id="Prizes-table">
+        <thead>
+           <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Points</th>
+           </tr>
+        </thead>
+        <tbody></tbody>
+     </table>
+     <button onclick="addPrize()">Add New Prize</button>
+     <br><br>
+     <script src = "eventPreload.js"></script>
+</body>
+</html>

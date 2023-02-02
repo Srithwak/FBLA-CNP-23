@@ -1,0 +1,52 @@
+[
+    {
+        "name": "adme",
+        "grade": "12",
+        "username": "numb",
+        "password": "bigboi3",
+        "points": 101,
+        "currentPrize": "None",
+        "admin": true,
+        "key": 3
+    },
+    {
+        "name": "adere",
+        "grade": "11",
+        "username": "nil",
+        "password": "bigboi4",
+        "points": 600,
+        "currentPrize": "None",
+        "admin": false,
+        "key": 2
+    },
+    {
+        "name": "adyi",
+        "grade": "10",
+        "username": "yiyp",
+        "password": "ticket",
+        "points": 256,
+        "currentPrize": "None",
+        "admin": true,
+        "key": 1
+    },
+    {
+        "name": "rirt",
+        "grade": "12",
+        "username": "nun",
+        "password": "ghgf",
+        "points": 111,
+        "currentPrize": "rit",
+        "admin": false,
+        "key": 0
+    },
+    {
+        "name": "adele",
+        "grade": "12",
+        "username": "numt",
+        "password": "bigboi1",
+        "points": 100,
+        "currentPrize": "None",
+        "admin": true,
+        "key": 4
+    }
+]

@@ -1,0 +1,22 @@
+{
+  "name": "electron-js2",
+  "version": "1.0.0",
+  "description": "FBLA Coding and Programming 2023",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^22.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Srithwak/FBLA-CNP-23.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Srithwak/FBLA-CNP-23/issues"
+  },
+  "homepage": "https://github.com/Srithwak/FBLA-CNP-23#readme"
+}

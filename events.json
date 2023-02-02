@@ -1,0 +1,26 @@
+[
+  {
+    "event": "    hia1   ",
+    "eventType": "  nonSports    ",
+    "pointsGained": 100,
+    "limit": 7
+  },
+  {
+    "event": "hia2",
+    "eventType": "nonSports",
+    "pointsGained": 10,
+    "limit": 5
+  },
+  {
+    "event": "hia3",
+    "eventType": "nonSports",
+    "pointsGained": 10,
+    "limit": 5
+  },
+  {
+    "event": "hia4",
+    "eventType": "sports",
+    "pointsGained": 10,
+    "limit": 5
+  }
+]

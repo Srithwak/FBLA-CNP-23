@@ -1,0 +1,26 @@
+[
+  {
+    "name": "rew1",
+    "points": 301,
+    "type": "test",
+    "key": 1
+  },
+  {
+    "name": "rew2",
+    "points": 200,
+    "type": "foodReward",
+    "key": 2
+  },
+  {
+    "name": "rew3",
+    "points": 400,
+    "type": "other",
+    "key": 3
+  },
+  {
+    "name": "rew4",
+    "type": "schoolReward",
+    "points": 89,
+    "key": 4
+  }
+]

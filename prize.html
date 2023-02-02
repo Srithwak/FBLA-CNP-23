@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Prizes Page</title>
+</head>
+
+<body>
+
+   <form>
+      <label for="event-name">Name:</label><br>
+      <input type="text" class="name1" onkeyup="filterPrizes()"><br>
+      <br>
+
+      <label for="type">Type:</label><br>
+      <input type="text" class="type1" onkeyup="filterPrizes()"><br>
+      <br>
+
+      <label for="points">Points:</label><br>
+      <input type="number" min="0" class="points1" onkeyup="filterPrizes()"><br>
+      <br>
+   </form>
+
+   <table id="Prizes-table">
+      <thead>
+         <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Points</th>
+         </tr>
+      </thead>
+      <tbody></tbody>
+   </table>
+   <button onclick="addPrize()">Add New Prize</button>
+   <br><br>
+   
+
+
+   <script src="prizePreload.js"></script>
+</body>
+
+</html>
