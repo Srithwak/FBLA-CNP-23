@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-   <!-- hiyaaaa -->
+<!-- hiyaaaa -->
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,70 +11,346 @@
 
 <body>
 
-   <form>
-      <label for="event-name">Full Name:</label><br>
-      <input type="text" class="name" onkeyup="filter()"><br>
-      <br>
+   <header>
+      <nav class="nav__wrapper">
+         <span class="material-symbols-outlined" onclick="enable()">menu</span>
+         <div class="dropdown dropdown__list">
+            <a href="#" class="dropdown__link">Home</a>
+            <a href="#" class="dropdown__link">Home</a>
+            <a href="#" class="dropdown__link">Home</a>
+            <a href="#" class="dropdown__link">Home</a>
+            <a href="#" class="dropdown__link">Home</a>
+         </div>
+         <div class="nav__menu">
+            <ul class="nav__list">
+               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+            </ul>
+         </div>
+      </nav>
+   </header>
 
-      <label for="sport">Is this a sports event?</label>
-      <input type="radio" name="eventType" onchange = filter() class="sportsEvent">
+   <!-- <form action="">
 
-      <label for="nonSport">Is this a non-sports event?</label>
-      <input type="radio" name="eventType" onchange = "filter()" class="nonSportsEvent">
-<br><br>
-      <label for="points">pointsgained:</label><br>
-      <input type="number" min = "0" class="pointsGained" onkeyup = "filter()"><br>
-      <br>
-      <label for="limit">limit:</label><br>
-      <input type="number" min = "0" class="limit" onkeyup = "filter()"><br>
-      <br><br>
-    </form>
+   </form> -->
+
+   <div class="container">
+      <div class="left__side">
+         <form>
+            <h1>Filter events</h1>
+            <label for="event-name">Full Name:</label><br>
+            <input type="text" class="name" onkeyup="filter()"><br>
+            <br>
+      
+            <label for="sport">Is this a sports event?</label>
+            <input type="radio" name="eventType" onchange=filter() class="sportsEvent"><br><br>
+      
+            <label for="nonSport">Is this a non-sports event?</label>
+            <input type="radio" name="eventType" onchange="filter()" class="nonSportsEvent">
+            <br><br>
+            <label for="points">pointsgained:</label><br>
+            <input type="number" min="0" class="pointsGained" onkeyup="filter()"><br>
+            <br>
+            <label for="limit">limit:</label><br>
+            <input type="number" min="0" class="limit" onkeyup="filter()"><br>
+            <br><br>
+         </form>
+      </div>
+      <div class="middle">
+         <div class="wrapper">
+            <div class="left">
+               <form action="">
+               <table id="event-table">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>pointsGained</th>
+                        <th>limit</th>
+                        <th>actions</th>
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table><br>
+               <button onclick="addEvent()">Add New Event</button>
+            </form>
+            </div>
+            <div class="right">
+               <form action="">
+               <table id="Prizes-table">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Points</th>
+                        <th>Actions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <!-- <td></td> -->
+                  </tbody>
+               </table><br>
+               <button onclick="addPrize()">Add New Prize</button>
+               <br><br>
+            </form>
+            </div>
+         </div>
+      </div>
+      <div class="right__side">
+         <form class="prizePage">
+            <h1>Filter prizes</h1>
+            <label for="event-name">Name:</label><br>
+            <input type="text" class="name1" onkeyup="filterPrizes()"><br>
+            <br>
+      
+            <label for="type">Type:</label><br>
+            <input type="text" class="type1" onkeyup="filterPrizes()"><br>
+            <br>
+      
+            <label for="points">Points:</label><br>
+            <input type="number" min="0" class="points1" onkeyup="filterPrizes()"><br>
+            <br>
+         </form>
+      </div>
+   </div>
+
+   <!-- 
+
    
-    <table id="event-table">
-      <thead>
-          <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>pointsGained</th>
-              <th>limit</th>
-              <th>actions</th>
-          </tr>
-      </thead>
-      <tbody></tbody>
-  </table>
-  <button onclick="addEvent()">Add New Event</button>
-  
+
+   <br><br><br><br><br><br><br>
+
+   
+
+    -->
 
 
-<br><br><br><br><br><br><br>
 
 
-    <form class = "prizePage">
-        <label for="event-name">Name:</label><br>
-        <input type="text" class="name1" onkeyup="filterPrizes()"><br>
-        <br>
-  
-        <label for="type">Type:</label><br>
-        <input type="text" class="type1" onkeyup="filterPrizes()"><br>
-        <br>
-  
-        <label for="points">Points:</label><br>
-        <input type="number" min="0" class="points1" onkeyup="filterPrizes()"><br>
-        <br>
-     </form>
-  
-     <table id="Prizes-table">
-        <thead>
-           <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Points</th>
-           </tr>
-        </thead>
-        <tbody></tbody>
-     </table>
-     <button onclick="addPrize()">Add New Prize</button>
-     <br><br>
-     <script src = "eventPreload.js"></script>
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+      * {
+         font-family: 'JetBrains Mono', monospace;
+         scroll-behavior: smooth;
+         box-sizing: border-box;
+         scrollbar-width: none;
+         user-select: none;
+         color: #000;
+         padding: 0;
+         margin: 0;
+      }
+
+      *::-webkit-scrollbar {
+         display: none;
+      }
+
+      body {
+         background-color: #ccc;
+      }
+
+      header {
+         background-color: #777;
+         position: fixed;
+         padding: 1.5rem;
+         display: flex;
+         z-index: 999;
+         height: 0rem;
+         width: 100%;
+         top: 0;
+      }
+
+      ul {
+         list-style: none;
+      }
+
+      a {
+         text-decoration: none;
+      }
+
+      .nav__wrapper {
+         align-items: center;
+         display: flex;
+      }
+
+      .material-symbols-outlined {
+         cursor: pointer;
+      }
+
+      .dropdown {
+         position: relative;
+         display: inline-block;
+      }
+
+      .dropdown__list {
+         top: 3rem;
+         left: 0;
+         display: none;
+         position: absolute;
+         background-color: #777;
+         min-width: 100vw;
+         overflow: auto;
+         z-index: 1;
+         padding: 1rem;
+      }
+
+      .dropdown__link {
+         display: block;
+      }
+
+      .second {
+         margin-top: 1rem;
+      }
+
+      .show {
+         display: block;
+      }
+
+      .nav__menu {
+         position: absolute;
+         right: 1.5rem;
+      }
+
+      .nav__list {
+         display: flex;
+         gap: 1.5rem;
+      }
+
+      .nav__link {
+         transition: .3s;
+      }
+
+      .nav__link:hover {
+         background-color: #666;
+         border-radius: .5rem;
+         padding: .5rem;
+      }
+
+      .container {
+         position: relative;
+         width: 100%;
+         display: grid;
+         grid-template-columns: 1fr 5fr 1fr;
+         margin-top: 3rem;
+      }
+
+      .wrapper {
+         position: relative;
+         width: 100%;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         /* margin-top: 3rem; */
+
+      }
+
+      .left__side {
+         background-color: #aaa;
+         position: relative;
+         padding: 2rem;
+      }
+
+      .middle {
+         background-color: #ccc;
+         position: relative;
+         min-height: calc(100vh - 3rem);
+         /* padding: 2rem; */
+      }
+
+      .right__side {
+         background-color: #aaa;
+         position: relative;
+         padding: 2rem;
+      }
+
+
+      .left {
+         background-color: #ccc;
+         position: relative;
+         padding: 2rem;
+      }
+      .right {
+         background-color: #ccc;
+         position: relative;
+         padding: 2rem;
+      }
+
+      h1 {
+         font-size: 1.5rem;
+         margin-bottom: 1rem;
+      }
+
+      select,
+      input {
+         padding: .25rem;
+         border: none;
+         border-radius: .25rem;
+      }
+
+      input[type=button] {
+         padding: .25rem;
+         border: none;
+         background-color: #ff6969;
+         border-radius: .5rem;
+         transition: .15s;
+      }
+
+      .limit__width {
+         width: 100%;
+
+      }
+
+      input[type=button]:hover {
+         color: #fff;
+      }
+
+      /* action buttons */
+      button {
+         padding: .25rem;
+         border: none;
+         background-color: #69daff;
+         border-radius: .5rem;
+         transition: .15s;
+      }
+
+      button:hover {
+         color: #fff;
+      }
+
+
+      table {
+         border-collapse: collapse;
+         color: #fff;
+         text-align: center;
+         width: 100%;
+      }
+
+      thead {
+         background-color: #ddd;
+      }
+
+      tbody {
+         background-color: #eee;
+      }
+
+      tr:nth-child(even) {
+         background-color: #ddd;
+      }
+
+      th,
+      td {
+         padding: .5rem;
+         overflow: hidden;
+      }
+   </style>
+   <script>
+      function enable() {
+         document.querySelector('.dropdown').classList.toggle('show');
+      }
+   </script>
+   <script src="eventPreload.js"></script>
 </body>
+
 </html>
