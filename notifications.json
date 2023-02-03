@@ -14,7 +14,6 @@
     "read": true,
     "key": 1
   },
-  
   {
     "type": "adminPriveleges",
     "name": "adere",
@@ -29,7 +28,8 @@
     ],
     "read": true,
     "key": 2
-  },{
+  },
+  {
     "type": "adminPriveleges",
     "name": "adere",
     "admin": true,
