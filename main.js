@@ -6,7 +6,11 @@ const isDev = process.env.NODE_ENV !== 'development'; //check if admin or not
 // const isDev = true;
 const isMac = process.platform === 'darwin'; //checks if app is running on mac
 
+<<<<<<< HEAD
 function createWindow(htmlFile = 'login.html', preloadFile = "loginPreload.js") {
+=======
+function createWindow(htmlFile = 'login.html', preloadFile = "studentsPreload.js") {
+>>>>>>> 25b26a99ce1d5d02c7bbf5f37dd371bfa477b190
    // Create the browser window.
    const win = new BrowserWindow({
       title: 'Title',

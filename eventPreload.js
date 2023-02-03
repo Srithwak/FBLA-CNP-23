@@ -6,6 +6,7 @@ form.addEventListener('submit', (event) => {
    filter();
    filterPrizes();
 });
+
 function getJSON(file) { //gets data from JSON file in a useable format
    // console.log(JSON.parse(fs.readFileSync(file)));
    // const fs = require('fs');
@@ -22,13 +23,13 @@ function uploadJSON(data, file) { //overwrites JSON file and uploads with data
 function addEvent() {
    // Create a new row in the table
    let newRow = document.createElement('tr');
-   newRow.innerHTML = `<td><input type="text" class="new-name"></td>
+   newRow.innerHTML = `<td><input class = "limit__width" type="text" class="new-name"></td>
                       <td>
                         <input type="radio" name="new-eventType" value="sports">Sports
                         <input type="radio" name="new-eventType" value="nonSports">Non-Sports
                       </td>
-                      <td><input type="number" min="0" class="new-pointsGained"></td>
-                      <td><input type="number" min="0" class="new-limit"></td>
+                      <td><input class = "limit__width" type="number" min="0" class="new-pointsGained"></td>
+                      <td><input class = "limit__width" type="number" min="0" class="new-limit"></td>
                       <td><button onclick="saveChanges()">Save Changes</button>
                       <button onclick="deleteEvent()">Delete</button></td>`;
    document.querySelector('#event-table tbody').appendChild(newRow);
@@ -49,22 +50,22 @@ function cancelChanges() {
    filter();
 }
 
-// function saveChanges(index) {
-//    let events = getJSON("events.json");
-//    let tr = document.querySelector(`tr[data-index='${index}']`);
-//    let eventName = tr.querySelector("td:nth-child(1)").textContent;
-//    let eventType = tr.querySelector("td:nth-child(2)").textContent;
-//    let pointsGained = tr.querySelector("td:nth-child(3)").textContent;
-//    let limit = tr.querySelector("td:nth-child(4)").textContent;
+function saveChanges(index) {
+   let events = getJSON("events.json");
+   let tr = document.querySelector(`tr[data-index='${index}']`);
+   let eventName = tr.querySelector("td:nth-child(1)").textContent;
+   let eventType = tr.querySelector("td:nth-child(2)").textContent;
+   let pointsGained = tr.querySelector("td:nth-child(3)").textContent;
+   let limit = tr.querySelector("td:nth-child(4)").textContent;
 
-//    events[index].event = eventName;
-//    events[index].eventType = eventType;
-//    events[index].pointsGained = pointsGained;
-//    events[index].limit = limit;
+   events[index].event = eventName;
+   events[index].eventType = eventType;
+   events[index].pointsGained = pointsGained;
+   events[index].limit = limit;
 
-//    uploadJSON(events, "events.json");
-//    filter();
-// }
+   uploadJSON(events, "events.json");
+   filter();
+}
 
 function saveChanges(index) { //the whole function doesn't work
    let eventData = getJSON("events.json");
@@ -87,12 +88,17 @@ function saveChanges(index) { //the whole function doesn't work
       let eventName = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(1)`).innerHTML;
       let eventType = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(2)`).innerHTML;
       let pointsGained = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(3)`).innerHTML;
-      let limit = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(4)`).innerHTML; //limit is undefined only problem
+      let limit = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(4)`).innerHTML; 
+      eventName = eventName.split(' ');
+      eventName = eventName[1];
+      eventType = eventType.split(' ');
+      eventType = eventType[1];
       eventData[index].event = eventName;
       eventData[index].eventType = eventType;
       eventData[index].pointsGained = parseInt(pointsGained);
       eventData[index].limit = parseInt(limit);
       uploadJSON(eventData, "events.json");
+    console.log(eventData);
    }
    filter();
 }
@@ -172,8 +178,6 @@ function filter() {
    }
 }
 
-
-
 function filterPrizes() {
     let name = document.querySelector(".name1").value;
     let type = document.querySelector(".type1").value;
@@ -197,7 +201,7 @@ function filterPrizes() {
                           <td contenteditable="true">${prize.name}</td>
                           <td contenteditable="true">${prize.type}</td>
                           <td contenteditable="true">${prize.points}</td>
-                          <td><button onclick="saveChangesPrizes(${i})">Save</button>
+                          <td><button onclick="saveChangesPrizes(${i})">Save Changes</button>
                               <button onclick="cancelChangesPrize(${i})">Cancel</button>
                               <button onclick="deletePrize(${i})">Delete</button>
                           </td>
@@ -210,9 +214,9 @@ function filterPrizes() {
  function addPrize() {
     // Create a new row in the table
     let newRow = document.createElement('tr');
-    newRow.innerHTML = `<td><input type="text" class="new-name1"></td>
-                       <td><input type="text" class="new-type1"></td>
-                       <td><input type="number" min="0" class="new-points1"></td>
+    newRow.innerHTML = `<td><input class = "limit__width" type="text" class="new-name1"></td>
+                       <td><input class = "limit__width" type="text" class="new-type1"></td>
+                       <td><input class = "limit__width" type="number" min="0" class="new-points1"></td>
                        <td>
                           <button class="save-button">Save Changes</button>
                           <button class="delete-button">Delete</button>
@@ -247,11 +251,11 @@ function filterPrizes() {
              }
        prizeData.push({ name: newName, type: newType, points: newPoints, key:key });
        uploadJSON(prizeData, "prizes.json");
- 
        filterPrizes();
     });
  }
  
+
  
  function cancelChangesPrize(index) {
     // Reload the table to discard the changes

@@ -253,24 +253,14 @@ function displayNotifs() {
          ${buttons}
          </td>
       `;
-      }
-      if (notifs[i].read)
-         row += `<td>
-         <!--<button class="readUnreadBtn" onclick="readUnread(${notifs[i].key})"></button>-->
-         <div class="redGreenBtnHolder"onclick="readUnread(${notifs[i].key})">
-            <div class="green__dot"></div>
-         </div>
-         </td>`;
-      else
-         row += `<td>
-         <!--<button class="readUnreadBtn" onclick="readUnread(${notifs[i].key})"></button>-->
-         <div class="redGreenBtnHolder"onclick="readUnread(${notifs[i].key})">
-            <div class="red__dot"></div>
-         </div>
-         </td>`;
-      row += `<tr></tr>`;
-      tableBody.innerHTML += row;
-   }
+        }
+        if (notifs[i].read)
+            row += `<td>Read</td>`;
+        else
+            row += `<td>Unread</td>`;
+        row += `<tr></tr>`;
+        tableBody.innerHTML += row;
+    }
 }
 
 
