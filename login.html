@@ -11,9 +11,26 @@
 </head>
 
 <body>
-<nav class="nav">
-   <!-- <iframe src="./hamburger.html"></iframe> -->
 
+    <div class="alert__box" style="display: block;">
+        <h2 class="alert__title">Alert title</h2>
+        <p class="alert__description">Alert description</p>
+     </div>
+  
+     <div class="warning__box" style="display: block;">
+        <h2 class="warning__title">Warning title</h2>
+        <p class="warning__description">Warning description</p>
+     </div>
+     
+     <div class="error__box" style="display: block;">
+        <h2 class="error__title">Error title</h2>
+        <p class="error__description">Error description</p>
+     </div>
+  
+
+    <nav class="nav">
+   <!-- <iframe src="./hamburger.html"></iframe> -->
+ 
    <form>
       <div class="text-boxes">
          <input class="username" type="text" name="text" placeholder="Username" required><br><br>
@@ -122,6 +139,65 @@
       button:hover {
          background-color: #00f;
       }
+
+      .alert__box {
+         position: fixed;
+         bottom: 2rem;
+         right: 2rem;
+         background-color: #aaa;
+         z-index: 2;
+         width: 20rem;
+         height: 10rem;
+         padding: 1rem;
+         border-radius: .5rem;
+
+         opacity: 0;
+         transition: opacity .5s;
+      }
+
+      .warning__box {
+         position: fixed;
+         bottom: 2rem;
+         right: 2rem;
+         background-color: #ffb85c;
+         z-index: 2;
+         width: 20rem;
+         height: 10rem;
+         padding: 1rem;
+         border-radius: .5rem;
+
+         opacity: 0;
+         transition: opacity .5s;
+      }
+
+      .error__box {
+         position: fixed;
+         bottom: 2rem;
+         right: 2rem;
+         background-color: #ff6969;
+         z-index: 2;
+         width: 20rem;
+         height: 10rem;
+         padding: 1rem;
+         border-radius: .5rem;
+
+         opacity: 0;
+         transition: opacity .5s;
+      }
+
+      .alert__title,
+      .alert__description,
+      .warning__title,
+      .warning__description,
+      .error__title,
+      .error__description {
+         color: #333;
+      }
+
+      .fade {
+         opacity: 1;
+      }
+
    </style>
 </body>
 

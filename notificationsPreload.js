@@ -260,9 +260,9 @@ function displayNotifs() {
       `;
         }
         if (notifs[i].read)
-            row += `<td>Read</td>`;
+            row += `<td class = "displayRed">Read</td>`;
         else
-            row += `<td>Unread</td>`;
+            row += `<td class = "displayGreen">Unread</td>`;
         row += `<tr></tr>`;
         tableBody.innerHTML += row;
     }
