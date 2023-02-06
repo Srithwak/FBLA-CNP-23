@@ -2,303 +2,311 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
-   <link rel="stylesheet" href="./index.css">
-   <title>Testing</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="./index.css">
+    <title>Testing</title>
 </head>
 
 <body>
-   <header>
-      <nav class="nav__wrapper">
-         <span class="material-symbols-outlined" onclick="enable()">menu</span>
-         <div class="dropdown dropdown__list">
-            <a href="./students.html" class="dropdown__link">Students</a>
-            <a href="./event.html" class="dropdown__link">Events</a>
-            <a href="#" class="dropdown__link">Home</a>
-            <a href="#" class="dropdown__link">Home</a>
-            <a href="#" class="dropdown__link">Home</a>
-         </div>
-         <div class="nav__menu">
-            <ul class="nav__list">
-               <li class="nav__item"><a href="./notifications.html" class="nav__link">Notifications</a></li>
-               <li class="nav__item"><a href="#" class="nav__link">Profile</a></li>
-               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-               <li class="nav__item"><a href="./login.html" class="nav__link">Signout</a></li>
-            </ul>
-         </div>
-      </nav>
-   </header>
-   <div class="container">
-      <div class="left__side">
-         <form action="">
-            <h1>Filter</h1>
-            <input type="text" placeholder="Full name" onkeyup="filter()" class="name"><br><br>
-            <input type="text" placeholder="Username" onkeyup="filter()" class="username"><br><br>
-            <input type="number" placeholder="Points" onkeyup="filter()" min="0" max="999999999" class="points"><br><br>
-            <input type="radio" id="admin" name="identifier" class="admin3" onchange="filter()" value = "true"><label for="admin">
-               Admin</label><br>
-            <input type="radio" id="student" name="identifier" class="student3" onchange="filter()" value = "false"><label
-               for="student"> Student</label><br>
-            <input type="radio" id="none" name="identifier" class="none3" onchange="filter()" value = "none"><label for="none">
-               None</label><br><br>
-            <select class="grade" onchange="filter()">
-               <option value="0">All</option>
-               <option value="9">9</option>
-               <option value="10">10</option>
-               <option value="11">11</option>
-               <option value="12">12</option>
-            </select><br><br>
-            <input type="text" placeholder="Current prize" class="currentPrize" onkeyup="filter()">
-            <br><br>
-            <input class="limit__width" type="button" value="Check all" onclick="checkAll()"><br><br>
-            
-            <input class="limit__width" type="button" value="Check admin" onclick="checkAllAdmin()"><br><br>
-            <input class="limit__width" type="button" value="Check students" onclick="checkAllStudent()"><br><br>
-            <input class="limit__width" type="button" value="Clear checked" onclick="clearAllChecked()"> 
-         </form>
-      </div>
-      <div class="middle">
-         <form action="">
-            <h1>Table</h1>
-            <table id="students-table">
-               <thead>
-                  <tr>
-                     <th>Check</th>
-                     <th>Name</th>
-                     <th>Grade</th>
-                     <th>Username</th>
-                     <th>Password</th>
-                     <th>Points</th>
-                     <th>Prize</th>
-                     <th>Admin</th>
-                     <th>Actions</th>
-                  </tr>
-               </thead>
-               <tbody></tbody>
-            </table><br>
-            <input type="button" class = "" value="Add student" onclick="addNewStudent()">
-            
-            
-         </form>
-      </div>
-      <div class="right__side">
-         <form action="">
-            <h1>Create</h1>
-            <input type="radio" class="add" name="identifier"><label for="add"> Add event</label><br>
-            <input type="radio" class="remove" name="identifier"><label for="remove"> Remove event</label><br>
-            <input type="text" placeholder="Event name" class="eventName"><br><br>
-            <input type="button" class="limit__width" value="Update points" onclick="updatePoints()"><br><br><br>
-            <h1>Assign prizes</h1>
-            <input class="limit__width" type="button" value="Give Prizes" onclick="givePrizes()"><br><br>
-            <input class="limit__width" type="button" value="Reset Prizes" onclick="resetPrizes()">
-        </form>
-      </div>
-   </div>
-   <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+    <header>
+        <nav class="nav__wrapper">
+            <span class="material-symbols-outlined" onclick="enable()">menu</span>
+            <div class="dropdown dropdown__list">
+                <a href="./students.html" class="dropdown__link">Students</a>
+                <a href="./event.html" class="dropdown__link">Events</a>
+                <a href="#" class="dropdown__link">Home</a>
+                <a href="#" class="dropdown__link">Home</a>
+                <a href="#" class="dropdown__link">Home</a>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="./notifications.html" class="nav__link">Notifications</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Profile</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="./login.html" class="nav__link">Signout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="left__side">
+            <form action="">
+                <h1>Filter</h1>
+                <input type="text" placeholder="Full name" onkeyup="filter()" class="name"><br><br>
+                <input type="text" placeholder="Username" onkeyup="filter()" class="username"><br><br>
+                <input type="number" placeholder="Points" onkeyup="filter()" min="0" max="999999999"
+                    class="points"><br><br>
+                <input type="radio" id="admin" name="identifier" class="admin3" onchange="filter()" value="true"><label
+                    for="admin">
+                    Admin</label><br>
+                <input type="radio" id="student" name="identifier" class="student3" onchange="filter()"
+                    value="false"><label for="student"> Student</label><br>
+                <input type="radio" id="none" name="identifier" class="none3" onchange="filter()" value="none"><label
+                    for="none">
+                    None</label><br><br>
+                <select class="grade" onchange="filter()">
+                    <option value="0">All</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select><br><br>
+                <input type="text" placeholder="Current prize" class="currentPrize" onkeyup="filter()">
+                <br><br>
+                <input class="limit__width" type="button" value="Check all" onclick="checkAll()"><br><br>
 
-      * {
-         font-family: 'JetBrains Mono', monospace;
-         scroll-behavior: smooth;
-         box-sizing: border-box;
-         scrollbar-width: none;
-         user-select: none;
-         color: #000;
-         padding: 0;
-         margin: 0;
-      }
-
-      *::-webkit-scrollbar {
-         display: none;
-      }
-
-      body {
-         background-color: #fff;
-      }
-
-      header {
-         background-color: #777;
-         position: fixed;
-         padding: 1.5rem;
-         display: flex;
-         z-index: 999;
-         height: 0rem;
-         width: 100%;
-         top: 0;
-      }
-
-      ul {
-         list-style: none;
-      }
-
-      a {
-         text-decoration: none;
-      }
-
-      .nav__wrapper {
-         align-items: center;
-         display: flex;
-      }
-
-      .material-symbols-outlined {
-         cursor: pointer;
-      }
-
-      .dropdown {
-         position: relative;
-         display: inline-block;
-      }
-
-      .dropdown__list {
-         top: 3rem;
-         left: 0;
-         display: none;
-         position: absolute;
-         background-color: #777;
-         min-width: 100vw;
-         overflow: auto;
-         z-index: 1;
-         padding: 1rem;
-      }
-
-      .dropdown__link {
-         display: block;
-      }
-
-      .second {
-         margin-top: 1rem;
-      }
-
-      .show {
-         display: block;
-      }
-
-      .nav__menu {
-         position: absolute;
-         right: 1.5rem;
-      }
-
-      .nav__list {
-         display: flex;
-         gap: 1.5rem;
-      }
-
-      .nav__link {
-         transition: .3s;
-      }
-
-      .nav__link:hover {
-         background-color: #666;
-         border-radius: .5rem;
-         padding: .5rem;
-      }
-
-      .container {
-         position: relative;
-         width: 100%;
-         display: grid;
-         grid-template-columns: 1fr 5fr 1fr;
-         margin-top: 3rem;
-      }
-
-      .left__side {
-         background-color: #aaa;
-         position: relative;
-         padding: 2rem;
-      }
-
-      .middle {
-         background-color: #ccc;
-         position: relative;
-         min-height: calc(100vh - 3rem);
-         padding: 2rem;
-      }
-
-      .right__side {
-         background-color: #aaa;
-         position: relative;
-         padding: 2rem;
-      }
-
-      h1 {
-         font-size: 1.5rem;
-         margin-bottom: 1rem;
-      }
-
-      select,
-      input {
-         padding: .25rem;
-         border: none;
-         border-radius: .25rem;
-      }
-
-      input[type=button] {
-         padding: .25rem;
-         border: none;
-         background-color: #ff6969;
-         border-radius: .5rem;
-         transition: .15s;
-      }
-
-      .limit__width {
-        width: 100%;
-        
-      }
-
-      input[type=button]:hover {
-         color: #fff;
-      }
-
-      /* action buttons */
-      button {
-         padding: .25rem;
-         border: none;
-         background-color: #69daff;
-         border-radius: .5rem;
-         transition: .15s;
-      }
-
-      button:hover {
-         color: #fff;
-      }
+                <input class="limit__width" type="button" value="Check admin" onclick="checkAllAdmin()"><br><br>
+                <input class="limit__width" type="button" value="Check students" onclick="checkAllStudent()"><br><br>
+                <input class="limit__width" type="button" value="Clear checked" onclick="clearAllChecked()">
+            </form>
+        </div>
+        <div class="middle">
+            <form action="">
+                <h1>Table</h1>
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th>Check</th>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Username</th>
+                            <th>Password</th>
+                            <th>Points</th>
+                            <th>Prize</th>
+                            <th>Admin</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table><br>
+                <input type="button" class="" value="Add student" onclick="addNewStudent()">
 
 
-      table {
-         border-collapse: collapse;
-         color: #fff;
-         text-align: center;
-         width: 100%;
-      }
+            </form>
+        </div>
+        <div class="right__side">
+            <form action="">
+                <h1>Create</h1>
+                <input type="radio" class="add" name="identifier"><label for="add"> Add event</label><br>
+                <input type="radio" class="remove" name="identifier"><label for="remove"> Remove event</label><br>
+                <input type="text" placeholder="Event name" class="eventName"><br><br>
+                <input type="button" class="limit__width" value="Update points" onclick="updatePoints()"><br><br><br>
+                <h1>Assign prizes</h1>
+                <input class="limit__width" type="button" value="Give Prizes" onclick="givePrizes()"><br><br>
+                <input class="limit__width" type="button" value="Reset Prizes" onclick="resetPrizes()">
+                <input type="button" onclick="randWinner()" value="Generate random winner for all grades">
+                <h1 class="randWinner">nth</h1>
 
-      thead {
-         background-color: #ccc;
-      }
+                <input type="button" onclick="topWinner()" value="Generate top winner for all grades">
+                <h1 class="topWinner">nth</h1>
+            </form>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
-      tbody {
-         background-color: #ddd;
-      }
+        * {
+            font-family: 'JetBrains Mono', monospace;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            scrollbar-width: none;
+            user-select: none;
+            color: #000;
+            padding: 0;
+            margin: 0;
+        }
 
-      tr:nth-child(even) {
-         background-color: #ccc;
-      }
+        *::-webkit-scrollbar {
+            display: none;
+        }
 
-      th,
-      td {
-         padding: .5rem;
-         overflow: hidden;
-      }
-   </style>
-   <script src="./studentsPreload.js"></script>
-   <script>
-      function enable() {
-         document.querySelector('.dropdown').classList.toggle('show');
-      }
-   </script>
+        body {
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #777;
+            position: fixed;
+            padding: 1.5rem;
+            display: flex;
+            z-index: 999;
+            height: 0rem;
+            width: 100%;
+            top: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav__wrapper {
+            align-items: center;
+            display: flex;
+        }
+
+        .material-symbols-outlined {
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown__list {
+            top: 3rem;
+            left: 0;
+            display: none;
+            position: absolute;
+            background-color: #777;
+            min-width: 100vw;
+            overflow: auto;
+            z-index: 1;
+            padding: 1rem;
+        }
+
+        .dropdown__link {
+            display: block;
+        }
+
+        .second {
+            margin-top: 1rem;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .nav__menu {
+            position: absolute;
+            right: 1.5rem;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav__link {
+            transition: .3s;
+        }
+
+        .nav__link:hover {
+            background-color: #666;
+            border-radius: .5rem;
+            padding: .5rem;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr;
+            margin-top: 3rem;
+        }
+
+        .left__side {
+            background-color: #aaa;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .middle {
+            background-color: #ccc;
+            position: relative;
+            min-height: calc(100vh - 3rem);
+            padding: 2rem;
+        }
+
+        .right__side {
+            background-color: #aaa;
+            position: relative;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        select,
+        input {
+            padding: .25rem;
+            border: none;
+            border-radius: .25rem;
+        }
+
+        input[type=button] {
+            padding: .25rem;
+            border: none;
+            background-color: #ff6969;
+            border-radius: .5rem;
+            transition: .15s;
+        }
+
+        .limit__width {
+            width: 100%;
+
+        }
+
+        input[type=button]:hover {
+            color: #fff;
+        }
+
+        /* action buttons */
+        button {
+            padding: .25rem;
+            border: none;
+            background-color: #69daff;
+            border-radius: .5rem;
+            transition: .15s;
+        }
+
+        button:hover {
+            color: #fff;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        tbody {
+            background-color: #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        th,
+        td {
+            padding: .5rem;
+            overflow: hidden;
+        }
+    </style>
+    <script src="./studentsPreload.js"></script>
+    <script>
+        function enable() {
+            document.querySelector('.dropdown').classList.toggle('show');
+        }
+    </script>
 </body>
 
 </html>

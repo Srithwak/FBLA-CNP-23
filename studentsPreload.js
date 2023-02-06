@@ -22,6 +22,193 @@ function uploadJSON(data, file) { //overwrites JSON file and uploads with data
 
 let filteredData = getJSON("user.json");
 
+
+var grades;
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function onload() {
+    grades = {
+        x9: [],
+        x10: [],
+        x11: [],
+        x12: []
+    }
+    let users = getJSON('user.json');
+    for (i of users)
+        if (i.grade == "9")
+            grades.x9.push(i);
+        else if (i.grade == "10")
+            grades.x10.push(i);
+        else if (i.grade == "11")
+            grades.x11.push(i);
+        else
+            grades.x12.push(i);
+}
+
+function randWinner() {
+    let h1;
+    onload();
+    if (grades.x9.length > 0)
+        h1 = "Grade 9: " + grades.x9[getRandomInt(grades.x9.length)].name + " ";
+    else h1 = "No students in grade 9 exist ";
+    if (grades.x10.length > 0)
+        h1 += "Grade 10: " + grades.x10[getRandomInt(grades.x10.length)].name + " ";
+    else h1 += "No students in grade 10 exist ";
+    if (grades.x11.length > 0)
+        h1 += "Grade 11: " + grades.x11[getRandomInt(grades.x11.length)].name + " ";
+    else h1 += "No students in grade 11 exist ";
+    if (grades.x12.length > 0)
+        h1 += "Grade 12: " + grades.x12[getRandomInt(grades.x12.length)].name;
+    else h1 += "No students in grade 12 exist ";
+    document.querySelector(".randWinner").textContent = h1;
+}
+
+function topWinner() {
+    onload();
+    let top = {
+        x9: "",
+        x10: "",
+        x11: "",
+        x12: ""
+    };
+    let count9 = [{
+        name: "",
+        points: 0
+    }];
+    let counter9 = 0;
+    if (grades.x9.length > 0)
+        for (let i = 0; i < grades.x9.length; i++)
+            if (grades.x9[i].points > count9[0].points)
+                count9[counter9] = {
+                    name: grades.x9[i].name,
+                    points: grades.x9[i].points
+                };
+            else if (grades.x9[i].points == count9[0].points) {
+                counter++;
+                count9[counter9] = {
+                    name: grades.x9[i].name,
+                    points: grades.x9[i].points
+                };
+            }
+
+    let count10 = [{
+        name: "",
+        points: 0
+    }];
+    let counter10 = 0;
+    if (grades.x10.length > 0)
+        for (let i = 0; i < grades.x10.length; i++)
+            if (grades.x10[i].points > count10[0].points)
+                count10[counter10] = {
+                    name: grades.x10[i].name,
+                    points: grades.x10[i].points
+                };
+            else if (grades.x10[i].points == count10[0].points) {
+                counter++;
+                count10[counter10] = {
+                    name: grades.x10[i].name,
+                    points: grades.x10[i].points
+                };
+            }
+
+    let count11 = [{
+        name: "",
+        points: 0
+    }];
+    let counter11 = 0;
+    if (grades.x11.length > 0)
+        for (let i = 0; i < grades.x11.length; i++)
+            if (grades.x11[i].points > count11[0].points)
+                count11[counter11] = {
+                    name: grades.x11[i].name,
+                    points: grades.x11[i].points
+                };
+            else if (grades.x11[i].points == count11[0].points) {
+                counter++;
+                count11[counter11] = {
+                    name: grades.x11[i].name,
+                    points: grades.x11[i].points
+                };
+            }
+
+    let count12 = [{
+        name: "",
+        points: 0
+    }];
+    let counter12 = 0;
+    if (grades.x12.length > 0)
+        for (let i = 0; i < grades.x12.length; i++)
+            if (grades.x12[i].points > count12[0].points)
+                count12[counter12] = {
+                    name: grades.x12[i].name,
+                    points: grades.x12[i].points
+                };
+            else if (grades.x12[i].points == count12[0].points) {
+                counter++;
+                count12[counter12] = {
+                    name: grades.x12[i].name,
+                    points: grades.x12[i].points
+                };
+            }
+
+    let h1 = "";
+    if (count9.length === 1) {
+        h1 += `The top winner in grade 9 is ${count9[0].name} with ${count9[0].points} points.`;
+    } else if (count9.length > 1) {
+        h1 += `The top winners in grade 9 are: `;
+        for (let i = 0; i < count9.length; i++) {
+            h1 += `${count9[i].name} with ${count9[i].points} points`;
+            if (i !== count9.length - 1) {
+                h1 += `, `;
+            }
+        }
+        h1 += `. `;
+    }
+
+    if (count10.length === 1) {
+        h1 += `The top winner in grade 10 is ${count10[0].name} with ${count10[0].points} points.`;
+    } else if (count10.length > 1) {
+        h1 += `The top winners in grade 10 are: `;
+        for (let i = 0; i < count10.length; i++) {
+            h1 += `${count10[i].name} with ${count10[i].points} points`;
+            if (i !== count10.length - 1) {
+                h1 += `, `;
+            }
+        }
+        h1 += `. `;
+    }
+
+    if (count11.length === 1) {
+        h1 += `The top winner in grade 11 is ${count11[0].name} with ${count11[0].points} points.`;
+    } else if (count11.length > 1) {
+        h1 += `The top winners in grade 11 are: `;
+        for (let i = 0; i < count11.length; i++) {
+            h1 += `${count11[i].name} with ${count11[i].points} points`;
+            if (i !== count11.length - 1) {
+                h1 += `, `;
+            }
+        }
+        h1 += `. `;
+    }
+
+    if (count12.length === 1) {
+        h1 += `The top winner in grade 12 is ${count12[0].name} with ${count12[0].points} points.`;
+    } else if (count12.length > 1) {
+        h1 += `The top winners in grade 12 are: `;
+        for (let i = 0; i < count12.length; i++) {
+            h1 += `${count12[i].name} with ${count12[i].points} points`;
+            if (i !== count12.length - 1) {
+                h1 += `, `;
+            }
+        }
+        h1 += `.`;
+    }
+    document.querySelector(".topWinner").textContent = h1;
+}
+
+
 function filter() {
     let name = document.querySelector(".name").value;
     let user = document.querySelector(".username").value;

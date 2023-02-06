@@ -92,6 +92,7 @@ function readUnread(key) {
       notifs[i].read = false;
    else notifs[i].read = true;
    uploadJSON(notifs, "notifications.json");
+   console.log('done?');
    displayNotifs();
 }
 
@@ -100,11 +101,12 @@ function deleteNotif(key) {
    let notifs = getJSON("notifications.json");
    let x = getIndexFromKey(key, "notifications.json");
    notifs.splice(x, 1);
+   console.log(notifs);
    uploadJSON(notifs, "notifications.json");
    displayNotifs();
 }
 
-function deleteNotifications() { //not working
+function deleteNotifications() { 
    let notifs = getJSON('notifications.json');
    console.log(checkedArr)
    for (let i = 0; i < notifs.length; i++)
@@ -131,6 +133,7 @@ function givePrize(key) {
    users[usersIndex].currentPrize = notifs[notifsIndex].prizeName;
    // console.log(users[usersIndex].currentPrize);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function removePrize(key) {
@@ -141,6 +144,7 @@ function removePrize(key) {
    users[usersIndex].currentPrize = "None";
    // console.log(users[usersIndex].currentPrize);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function giveEvent(key) {
@@ -154,6 +158,7 @@ function giveEvent(key) {
    users[usersIndex].points += points;
    // console.log(users[usersIndex].points);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function removeEvent(key) {
@@ -167,6 +172,7 @@ function removeEvent(key) {
    users[usersIndex].points -= points;
    // console.log(users[usersIndex].points);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function makeAdmin(key) {
@@ -177,6 +183,7 @@ function makeAdmin(key) {
    users[usersIndex].admin = true;
    // console.log(users[usersIndex].admin);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function removeAdmin(key) {
@@ -187,6 +194,7 @@ function removeAdmin(key) {
    users[usersIndex].admin = false;
    // console.log(users[usersIndex].admin);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function changePoints(key) {
@@ -197,6 +205,7 @@ function changePoints(key) {
    users[usersIndex].points = notifs[notifsIndex].pointNum;
    // console.log(users[usersIndex].points);
    uploadJSON(users, 'user.json');
+   displayNotifs();
 }
 
 function displayNotifs() {
@@ -262,7 +271,6 @@ function displayNotifs() {
         tableBody.innerHTML += row;
     }
 }
-
 
 
 displayNotifs();

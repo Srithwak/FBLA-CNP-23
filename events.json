@@ -1,26 +1,30 @@
 [
   {
-    "event": "hia",
+    "event": "golf",
     "eventType": "nonSports",
     "pointsGained": 100,
-    "limit": 7
+    "limit": 7,
+    "key": 0
   },
   {
-    "event": "hia2",
+    "event": "footbal",
     "eventType": "nonSports",
     "pointsGained": 10,
-    "limit": 5
+    "limit": 3,
+    "key": 1
   },
   {
-    "event": "hia3",
+    "event": "soccer",
     "eventType": "nonSports",
     "pointsGained": 10,
-    "limit": 5
+    "limit": 3,
+    "key": 2
   },
   {
-    "event": "hia4",
+    "event": "basketball",
     "eventType": "sports",
     "pointsGained": 10,
-    "limit": 5
+    "limit": 84,
+    "key": 3
   }
 ]
