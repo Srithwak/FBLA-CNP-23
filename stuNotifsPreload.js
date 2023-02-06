@@ -70,7 +70,7 @@ function filter() {
         if (i != user.pastEvents.length - 1)
             str += user.pastEvents[i] + ', ';
         else str += 'and ' + user.pastEvents[i] + '. ';
-        // str = "test1";
+    // str = "test1";
     str += `You also got ${user.pastPrizes.length} prizes, which include `;
     for (let i = 0; i < user.pastPrizes.length; i++)
         if (i != user.pastPrizes.length - 1)
@@ -82,41 +82,106 @@ function filter() {
 function askMessage() {
     let message = document.querySelector('.message').value;
     let notifs = getJSON('notifications.json');
-    let arr = [];
-    for (i of notifs) {
-        arr.push(i.key);
-    }
-    let keyToPush = [...Array(Math.max(...arr) + 1).keys()].filter(x => !arr.includes(x)).concat([Math.max(...arr) + 1])[0];
+    let keyToPush = getKeyToPush(notifs);
+    let key1 = JSON.parse(localStorage.getItem('userObj')).key;
     notifs.push({
         "type": "message",
-        "name": JSON.parse(localStorage.getItem('userObj')).name,
+        "name": getJSON('user.json')[getIndexFromKey(key1, 'user.json')].name,
         "message": message,
         "actions": [
             "delete",
             "reply",
             "read/unread"
         ],
-        "read": 'unread',
+        "read": false,
         "key": keyToPush
     });
-    uploadJSON(notifs, 'notifs.json');
+    uploadJSON(notifs, 'notifications.json');
 }
 
 function askPrize() {
-    let prizeName = document.querySelector(.prize).value;
-    let prizes = ;
+    let prizeName = document.querySelector('.prize').value;
+    let message = document.querySelector('.message').value;
+    let prizes = getJSON('prizes.json');
+    let arr = [];
+    for(i of prizes)
+        arr.push(i.name);
+    if(!arr.includes(prizeName)){
+        console.log('Prize does not exist');
+        return;
+    }
+    let notifs = getJSON('notifications.json');
+    let keyToPush = getKeyToPush(notifs);
+    let key1 = JSON.parse(localStorage.getItem('userObj')).key;
+    notifs.push({
+        "type": "prizeAssign",
+        "name": getJSON('user.json')[getIndexFromKey(key1, 'user.json')].name,
+        "prizeName": prizeName,
+        "message": message,
+        "actions": [
+            "delete",
+            "reply",
+            "givePrize",
+            "removePrize",
+            "read/unread"
+        ],
+        "read": false,
+        "key": keyToPush
+    });
+    uploadJSON(notifs, 'notifications.json');
+}
+
+function getKeyToPush(arr1) {
+    let arr = [];
+    for (i of arr1)
+        arr.push(i.key);
+    return [...Array(Math.max(...arr) + 1).keys()].filter(x => !arr.includes(x)).concat([Math.max(...arr) + 1])[0];
 }
 
 function askAdmin() {
-
+    let notifs = getJSON('notifications.json');
+    let key1 = JSON.parse(localStorage.getItem('userObj')).key;
+    let message = document.querySelector('.message').value;
+    notifs.push({
+        "type": "adminPriveleges",
+        "name": getJSON('user.json')[getIndexFromKey(key1, 'user.json')].name,
+        "admin": getJSON('user.json')[getIndexFromKey(key1, 'user.json')].admin,
+        "message": message,
+        "actions": [
+            "delete",
+            "reply",
+            "makeAdmin",
+            "removeAdmin",
+            "read/unread"
+        ],
+        "read": false,
+        "key": getKeyToPush(notifs)
+    });
+    uploadJSON(notifs, 'notifications.json');
 }
 
 function askPoints() {
-
-}
-
-function askEvent() {
-
+    let points = document.querySelector('.points').value;
+    let message = document.querySelector('.message').value;
+    let prizes = getJSON('prizes.json');
+    let notifs = getJSON('notifications.json');
+    let keyToPush = getKeyToPush(notifs);
+    let key1 = JSON.parse(localStorage.getItem('userObj')).key;
+    notifs.push({
+        "type": "pointChange",
+        "name": JSON.parse(localStorage.getItem('userObj')).name,
+        "pointNum": points,
+        "message": message,
+        "actions": [
+            "delete",
+            "reply",
+            "changePoints",
+            "read/unread"
+        ],
+        "read": false,
+        "key": keyToPush
+    });
+    uploadJSON(notifs, 'notifications.json');
 }
 
 function signUp(key) {

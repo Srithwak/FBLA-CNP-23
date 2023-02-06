@@ -55,10 +55,8 @@
     "points": 111,
     "currentPrize": "rit",
     "admin": false,
-    "pastEvents": [
-      "basketball", "golf"
-    ],
-    "pastPrizes": ["prize1", "prize2"],
+    "pastEvents": [],
+    "pastPrizes": [],
     "key": 0
   }
 ]

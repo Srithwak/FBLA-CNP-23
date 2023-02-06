@@ -30,21 +30,6 @@
     "key": 2
   },
   {
-    "type": "adminPriveleges",
-    "name": "adere",
-    "admin": true,
-    "message": "Help me1",
-    "actions": [
-      "delete",
-      "reply",
-      "makeAdmin",
-      "removeAdmin",
-      "read/unread"
-    ],
-    "read": true,
-    "key": 3
-  },
-  {
     "type": "message",
     "name": "adele",
     "message": "Help me",
@@ -72,26 +57,44 @@
   },
   {
     "type": "message",
-    "name": "adele",
-    "message": "Help me",
+    "name": "rirt",
+    "message": "test",
     "actions": [
       "delete",
       "reply",
       "read/unread"
     ],
-    "read": true,
-    "key": 6
+    "read": false,
+    "key": 0
   },
   {
-    "type": "message",
-    "name": "adele",
-    "message": "Help me",
+    "type": "prizeAssign",
+    "name": "rirt",
+    "prizeName": "rew4",
+    "message": "test1",
     "actions": [
       "delete",
       "reply",
+      "givePrize",
+      "removePrize",
       "read/unread"
     ],
-    "read": true,
-    "key": 7
+    "read": false,
+    "key": 3
+  },
+  {
+    "type": "adminPriveleges",
+    "name": "rirt",
+    "admin": false,
+    "message": "test1",
+    "actions": [
+      "delete",
+      "reply",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 6
   }
 ]
