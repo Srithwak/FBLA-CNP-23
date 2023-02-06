@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,5 +37,272 @@
         <h1 class = "log">nth</h1>
     </form>
      
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "stuNotifsPreload.js"></script>
+</head>
+<body onload = "filter()">
+
+    <header>
+        <nav class="nav__wrapper">
+            <span class="material-symbols-outlined" onclick="enable()">menu</span>
+            <div class="dropdown dropdown__list">
+                <a href="./students.html" class="dropdown__link">Students</a>
+                <a href="./event.html" class="dropdown__link">Events</a>
+                <a href="#" class="dropdown__link">Home</a>
+                <a href="#" class="dropdown__link">Home</a>
+                <a href="#" class="dropdown__link">Home</a>
+            </div>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="./notifications.html" class="nav__link">Notifications</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Profile</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="./login.html" class="nav__link">Signout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <form action="">
+        <h1 class="user"></h1>
+        <h1 class="grade"></h1>
+        <h1 class="username"></h1>
+        <h1 class="password"></h1>
+        <h1 class="points"></h1>
+        <h1 class="currentPrize"></h1>
+        <table id="event-table">
+           <thead>
+              <tr>
+                 <th>Name</th>
+                 <th>Type</th>
+                 <th>pointsGained</th>
+                 <th>limit</th>
+                 <th>actions</th>
+              </tr>
+           </thead>
+           <tbody></tbody>
+        </table><br>
+        <input type="text" placeholder="message" class = "message">
+        <input type="button" value="Send message" onclick = "askMessage()"><br><br>
+        <input type="text" placeholder="prizes" class = "prize">
+        <input type="button" value="Send Prize" onclick = "askPrize()"><br><br>
+        <input type="button" value="Send admin priveleges" onclick = "askAdmin()"><br><br>
+        <input type="number" placeholder="Points" class = "points">
+        <input type="button" value="Send points" onclick = "askPoints()"><br><br>
+        <h1 class = "log">nth</h1>
+    </form>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+        * {
+            font-family: 'JetBrains Mono', monospace;
+            scroll-behavior: smooth;
+            box-sizing: border-box;
+            scrollbar-width: none;
+            user-select: none;
+            color: #000;
+            padding: 0;
+            margin: 0;
+        }
+
+        *::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #777;
+            position: fixed;
+            padding: 1.5rem;
+            display: flex;
+            z-index: 999;
+            height: 0rem;
+            width: 100%;
+            top: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav__wrapper {
+            align-items: center;
+            display: flex;
+        }
+
+        .material-symbols-outlined {
+            cursor: pointer;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown__list {
+            top: 3rem;
+            left: 0;
+            display: none;
+            position: absolute;
+            background-color: #777;
+            min-width: 100vw;
+            overflow: auto;
+            z-index: 1;
+            padding: 1rem;
+        }
+
+        .dropdown__link {
+            display: block;
+        }
+
+        .second {
+            margin-top: 1rem;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .nav__menu {
+            position: absolute;
+            right: 1.5rem;
+        }
+
+        .nav__list {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav__link {
+            transition: .3s;
+        }
+
+        .nav__link:hover {
+            background-color: #666;
+            border-radius: .5rem;
+            padding: .5rem;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr;
+            margin-top: 3rem;
+        }
+
+        .left__side {
+            background-color: #aaa;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .middle {
+            background-color: #ccc;
+            position: relative;
+            min-height: calc(100vh - 3rem);
+            padding: 2rem;
+        }
+
+        .right__side {
+            background-color: #aaa;
+            position: relative;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        select,
+        input {
+            padding: .25rem;
+            border: none;
+            border-radius: .25rem;
+        }
+
+        input[type=button] {
+            padding: .25rem;
+            border: none;
+            background-color: #ff6969;
+            border-radius: .5rem;
+            transition: .15s;
+        }
+
+        .limit__width {
+            width: 100%;
+
+        }
+
+        input[type=button]:hover {
+            color: #fff;
+        }
+
+        /* action buttons */
+        button {
+            padding: .25rem;
+            border: none;
+            background-color: #69daff;
+            border-radius: .5rem;
+            transition: .15s;
+        }
+
+        button:hover {
+            color: #fff;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+        }
+
+        thead {
+            background-color: #ccc;
+        }
+
+        tbody {
+            background-color: #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        th,
+        td {
+            padding: .5rem;
+            overflow: hidden;
+        }
+    </style>
+     <script>
+        function enable() {
+            document.querySelector('.dropdown').classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
