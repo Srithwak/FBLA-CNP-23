@@ -60,5 +60,19 @@
     ],
     "pastPrizes": [],
     "key": 0
-  }
+  },
+  {
+   "name": "pp",
+   "grade": "12",
+   "username": "p",
+   "password": "p",
+   "points": 111,
+   "currentPrize": "yeee",
+   "admin": false,
+   "pastEvents": [
+     "footbal"
+   ],
+   "pastPrizes": [],
+   "key": 5
+ }
 ]
