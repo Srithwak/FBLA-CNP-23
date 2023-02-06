@@ -55,7 +55,9 @@
     "points": 111,
     "currentPrize": "rit",
     "admin": false,
-    "pastEvents": [],
+    "pastEvents": [
+      "footbal"
+    ],
     "pastPrizes": [],
     "key": 0
   }

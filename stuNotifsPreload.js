@@ -32,6 +32,14 @@ function getIndexFromKey(key, file) {
 }
 
 function filter() {
+    let key1 = JSON.parse(localStorage.getItem('userObj')).key;
+    document.querySelector('.user').innerHTML = "Name: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].name;
+    document.querySelector('.grade').innerHTML ="Grade: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].grade;
+    document.querySelector('.username').innerHTML ="Username: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].username;
+    document.querySelector('.password').innerHTML ="Password: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].password;
+    document.querySelector('.points').innerHTML ="Points: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].points;
+    document.querySelector('.currentPrize').innerHTML ="Current Prize: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].currentPrize;
+
     let events = getJSON('events.json');
     for (let i = 0; i < events.length - 1; i++) {
         let minIndex = i;
@@ -62,16 +70,22 @@ function filter() {
        ${signUpVal}`;
         tableBody.appendChild(newRow);
     }
-    let key1 = JSON.parse(localStorage.getItem('userObj')).key;
+    // let key1 = JSON.parse(localStorage.getItem('userObj')).key;
     let user = getJSON('user.json')[getIndexFromKey(key1, 'user.json')];
     // let log = document.querySelector('.log');
-    let str = `You have attended a total of ${user.pastEvents.length} events, which include `;
+    let str = `You have attended a total of ${user.pastEvents.length} events`;
+    if(user.pastEvents.length != 0)
+        str += `, which include `;
+    else str += `.`
     for (let i = 0; i < user.pastEvents.length; i++)
         if (i != user.pastEvents.length - 1)
             str += user.pastEvents[i] + ', ';
         else str += 'and ' + user.pastEvents[i] + '. ';
     // str = "test1";
-    str += `You also got ${user.pastPrizes.length} prizes, which include `;
+    str += `You also got ${user.pastPrizes.length} prizes`;
+    if(user.pastPrizes.length != 0)
+        str += `, which include `;
+        else str += `.`
     for (let i = 0; i < user.pastPrizes.length; i++)
         if (i != user.pastPrizes.length - 1)
             str += user.pastPrizes[i] + ', ';

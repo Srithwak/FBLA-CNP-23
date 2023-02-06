@@ -7,13 +7,6 @@
     "key": 0
   },
   {
-    "event": "footbal",
-    "eventType": "nonSports",
-    "pointsGained": 10,
-    "limit": 3,
-    "key": 1
-  },
-  {
     "event": "basketball",
     "eventType": "sports",
     "pointsGained": 10,
@@ -26,5 +19,12 @@
     "pointsGained": 10,
     "limit": 2,
     "key": 2
+  },
+  {
+    "event": "footbal",
+    "eventType": "nonSports",
+    "pointsGained": 10,
+    "limit": 2,
+    "key": 1
   }
 ]

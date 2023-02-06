@@ -563,7 +563,6 @@ function addNewStudent() {
             studentData.push({ name: newName, grade: newGrade, username: newUsername, password: newPassword, points: parseInt(newPoints), currentPrize: newCurrentPrize, admin: newAdmin, key: keyToPush });
             uploadJSON(studentData, "user.json");
         }
-
         filter();
     });
 }
