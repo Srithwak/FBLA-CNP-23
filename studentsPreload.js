@@ -439,14 +439,24 @@ function updatePoints() {
     let users = getJSON("user.json"); // get the JSON data
     let eventName = document.querySelector(".eventName").value; // get the input value for the event name
     let events = getJSON('events.json');
-    // let studentName = document.querySelector(".newName").value; // get the input value for the student name
+    let arr1 = [];
+    let add = document.querySelector(".add").checked;
+    let remove = document.querySelector(".remove").checked;
+    for(i of events)
+        arr1.push(i.event);
+    if(!arr1.includes(eventName)){
+        errorPopup('Event could not be found');
+        return false;
+    }
+    if(!add && !remove){
+        errorPopup('Check one above');
+        return false;
+    }
     let studentName = [];
     for (i of users)
         if (checkedArr.includes(i.key))
             studentName.push(i.name);
-    let add = document.querySelector(".add").checked;
-    let remove = document.querySelector(".remove").checked;
-
+    
     let addRemove;
     if (add) addRemove = "add";
     else if (remove) addRemove = "remove";

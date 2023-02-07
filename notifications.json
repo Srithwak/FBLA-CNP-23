@@ -1,12 +1,11 @@
 [
   {
     "type": "prizeAssign",
-    "name": "adme",
+    "name": "praneeth",
     "prizeName": "prize2",
     "message": "Help me",
     "actions": [
       "delete",
-      "reply",
       "givePrize",
       "removePrize",
       "read/unread"
@@ -16,12 +15,10 @@
   },
   {
     "type": "adminPriveleges",
-    "name": "adere",
-    "admin": true,
+    "name": "johnny",
     "message": "Help me1",
     "actions": [
       "delete",
-      "reply",
       "makeAdmin",
       "removeAdmin",
       "read/unread"
@@ -35,7 +32,6 @@
     "message": "Help me",
     "actions": [
       "delete",
-      "reply",
       "read/unread"
     ],
     "read": true,
@@ -43,12 +39,11 @@
   },
   {
     "type": "pointChange",
-    "name": "adyi",
+    "name": "rithwak",
     "pointNum": 25,
     "message": "Help me4",
     "actions": [
       "delete",
-      "reply",
       "changePoints",
       "read/unread"
     ],
@@ -57,11 +52,10 @@
   },
   {
     "type": "message",
-    "name": "rirt",
+    "name": "pp",
     "message": "test",
     "actions": [
       "delete",
-      "reply",
       "read/unread"
     ],
     "read": false,
@@ -69,12 +63,11 @@
   },
   {
     "type": "prizeAssign",
-    "name": "rirt",
+    "name": "pp",
     "prizeName": "rew4",
     "message": "test1",
     "actions": [
       "delete",
-      "reply",
       "givePrize",
       "removePrize",
       "read/unread"
@@ -84,12 +77,10 @@
   },
   {
     "type": "adminPriveleges",
-    "name": "rirt",
-    "admin": false,
+    "name": "adme",
     "message": "test1",
     "actions": [
       "delete",
-      "reply",
       "makeAdmin",
       "removeAdmin",
       "read/unread"

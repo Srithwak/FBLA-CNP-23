@@ -104,7 +104,6 @@ function askMessage() {
         "message": message,
         "actions": [
             "delete",
-            "reply",
             "read/unread"
         ],
         "read": false,
@@ -134,7 +133,6 @@ function askPrize() {
         "message": message,
         "actions": [
             "delete",
-            "reply",
             "givePrize",
             "removePrize",
             "read/unread"
@@ -159,11 +157,9 @@ function askAdmin() {
     notifs.push({
         "type": "adminPriveleges",
         "name": getJSON('user.json')[getIndexFromKey(key1, 'user.json')].name,
-        "admin": getJSON('user.json')[getIndexFromKey(key1, 'user.json')].admin,
         "message": message,
         "actions": [
             "delete",
-            "reply",
             "makeAdmin",
             "removeAdmin",
             "read/unread"
@@ -188,7 +184,6 @@ function askPoints() {
         "message": message,
         "actions": [
             "delete",
-            "reply",
             "changePoints",
             "read/unread"
         ],
