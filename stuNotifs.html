@@ -77,32 +77,39 @@
     </header>
 
     <form action="">
-        <h1 class="user"></h1>
-        <h1 class="grade"></h1>
-        <h1 class="username"></h1>
-        <h1 class="password"></h1>
-        <h1 class="points"></h1>
-        <h1 class="currentPrize"></h1>
-        <table id="event-table">
-           <thead>
-              <tr>
-                 <th>Name</th>
-                 <th>Type</th>
-                 <th>pointsGained</th>
-                 <th>limit</th>
-                 <th>actions</th>
-              </tr>
-           </thead>
-           <tbody></tbody>
-        </table><br>
-        <input type="text" placeholder="message" class = "message">
-        <input type="button" value="Send message" onclick = "askMessage()"><br><br>
-        <input type="text" placeholder="prizes" class = "prize">
-        <input type="button" value="Send Prize" onclick = "askPrize()"><br><br>
-        <input type="button" value="Send admin priveleges" onclick = "askAdmin()"><br><br>
-        <input type="number" placeholder="Points" class = "points">
-        <input type="button" value="Send points" onclick = "askPoints()"><br><br>
-        <h1 class = "log">nth</h1>
+      <div class="container">
+         <div class="left__side"><h1 class="user"></h1>
+            <h1 class="grade"></h1>
+            <h1 class="username"></h1>
+            <h1 class="password"></h1>
+            <h1 class="points"></h1>
+            <h1 class="currentPrize"></h1></div>
+            <div class="middle">
+               <table id="event-table">
+                  <thead>
+                     <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>pointsGained</th>
+                        <th>limit</th>
+                        <th>actions</th>
+                     </tr>
+                  </thead>
+                  <tbody></tbody>
+               </table><br>
+            </div>
+            <div class="right__side"><input type="text" placeholder="message" class = "message">
+               <input type="button" value="Send message" onclick = "askMessage()"><br><br>
+               <input type="text" placeholder="prizes" class = "prize">
+               <input type="button" value="Send Prize" onclick = "askPrize()"><br><br>
+               <input type="button" value="Send admin priveleges" onclick = "askAdmin()"><br><br>
+               <input type="number" placeholder="Points" class = "points">
+               <input type="button" value="Send points" onclick = "askPoints()"><br><br>
+               <h1 class = "log">nth</h1></div>
+      </div>
+        
+        
+        
     </form>
 
     <style>

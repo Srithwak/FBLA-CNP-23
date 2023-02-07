@@ -1,35 +1,5 @@
 [
   {
-    "type": "prizeAssign",
-    "name": "adme",
-    "prizeName": "prize2",
-    "message": "Help me",
-    "actions": [
-      "delete",
-      "reply",
-      "givePrize",
-      "removePrize",
-      "read/unread"
-    ],
-    "read": true,
-    "key": 1
-  },
-  {
-    "type": "adminPriveleges",
-    "name": "adere",
-    "admin": true,
-    "message": "Help me1",
-    "actions": [
-      "delete",
-      "reply",
-      "makeAdmin",
-      "removeAdmin",
-      "read/unread"
-    ],
-    "read": true,
-    "key": 2
-  },
-  {
     "type": "message",
     "name": "adele",
     "message": "Help me",
@@ -38,7 +8,7 @@
       "reply",
       "read/unread"
     ],
-    "read": true,
+    "read": false,
     "key": 4
   },
   {
@@ -52,7 +22,7 @@
       "changePoints",
       "read/unread"
     ],
-    "read": true,
+    "read": false,
     "key": 5
   },
   {
@@ -96,5 +66,199 @@
     ],
     "read": false,
     "key": 6
+  },
+  {
+    "type": "pointChange",
+    "name": "pp",
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 7
+  },
+  {
+    "type": "pointChange",
+    "name": "pp",
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 8
+  },
+  {
+    "type": "pointChange",
+    "name": "pp",
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 9
+  },
+  {
+    "type": "pointChange",
+    "name": "pp",
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 10
+  },
+  {
+    "type": "pointChange",
+    "name": "pp",
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 11
+  },
+  {
+    "type": "adminPriveleges",
+    "name": "pp",
+    "admin": false,
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 12
+  },
+  {
+    "type": "adminPriveleges",
+    "name": "pp",
+    "admin": false,
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 13
+  },
+  {
+    "type": "adminPriveleges",
+    "name": "pp",
+    "admin": false,
+    "message": "",
+    "actions": [
+      "delete",
+      "reply",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 14
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 15
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 16
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 17
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 18
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 19
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 20
+  },
+  {
+    "type": "message",
+    "name": "pp",
+    "message": "3453",
+    "actions": [
+      "delete",
+      "reply",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 21
   }
 ]
