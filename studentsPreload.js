@@ -500,8 +500,14 @@ function saveChanges(key, num) {
     filter();
 }
 
-
-
+function errorPopup(title = 'Error') {
+    let errorModal = document.querySelector('.error__box');
+    document.querySelector('.error__title').innerHTML = title;
+    errorModal.classList.add('fade');
+    setTimeout(function () {
+        errorModal.classList.remove('fade');
+    }, 2000);
+}
 
 function deleteStudent(key) {
     let users = getJSON("user.json");
@@ -571,21 +577,33 @@ function addNewStudent() {
 
 function verifyAddStudent(name, grade, username, password, points, admin, currentPrize) {
     let users = getJSON("user.json");
+    if(name < 3){
+        errorPopup('Name is too small');
+        return false;
+    }
+    if(grade < 9 || grade > 12){
+        errorPopup('Grade does not fit criteria');
+        return false;
+    }
+    if(points < 0){
+        errorPopup('Points cannot be lower than 0');
+        return false;
+    }
     if (password.includes(" ")) {
-        console.log("Password cannot contain spaces");
+        errorPopup('Password contains spaces');
         return false;
     }
     if (password.length < 2) {
-        console.log("Password is too short, try again");
+        errorPopup("Password is too short, try again");
         return false;
     }
     if (username < 2) {
-        console.log("Username is too short, try again");
+        errorPopup("Username is too short, try again");
         return false;
     }
     for (let i = 0; i < users.length; i++)
         if (username == users[i].username) {
-            console.log("Username is already included, try again");
+            errorPopup("Username is already included, try again");
             return false;
         }
     return true;
