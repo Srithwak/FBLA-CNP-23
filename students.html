@@ -12,6 +12,17 @@
 </head>
 
 <body>
+    <div class="alert__box" style="display: block;">
+        <h2 class="alert__title">Alert title</h2>
+     </div>
+ 
+     <div class="warning__box" style="display: block;">
+        <h2 class="warning__title">Warning title</h2>
+     </div>
+     
+     <div class="error__box" style="display: block;">
+        <h2 class="error__title">Error title</h2>
+     </div>
     <header>
         <nav class="nav__wrapper">
             <span class="material-symbols-outlined" onclick="enable()">menu</span>
@@ -300,6 +311,65 @@
             padding: .5rem;
             overflow: hidden;
         }
+        .alert__box {
+         position: fixed;
+         bottom: 1rem;
+         right: 0rem;
+         background-color: #aaa;
+         z-index: 2;
+         width: 15rem;
+         height: 1rem;
+         padding: 1rem;
+         border-radius: .25rem;
+
+         opacity: 0;
+         transition: opacity .5s;
+      }
+
+      .warning__box {
+         position: fixed;
+         bottom: 1rem;
+         right: 0rem;
+         background-color: #ffb85c;
+         z-index: 2;
+         width: 15rem;
+         height: 1rem;
+         padding: 1rem;
+         border-radius: .25rem;
+
+         opacity: 0;
+         transition: opacity .5s;
+      }
+
+      .error__box {
+         position: fixed;
+         bottom: 1rem;
+         right: 0rem;
+         background-color: #ff6969;
+         z-index: 2;
+         width: 15rem;
+         height: 1rem;
+         padding: 1rem;
+         border-radius: .25rem;
+
+         opacity: 0;
+         transition: opacity .5s;
+      }
+
+      .alert__title,
+      .alert__description,
+      .warning__title,
+      .warning__description,
+      .error__title,
+      .error__description {
+        font-size: 1rem;
+         color: #333;
+         margin: 0;
+      }
+
+      .fade {
+         opacity: 1;
+      }
     </style>
     <script src="./studentsPreload.js"></script>
     <script>

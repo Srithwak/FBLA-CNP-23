@@ -309,7 +309,6 @@ function filter() {
         } else {
             x = "";
         }
-        //  x = "checked";
         let row = `<tr>
                         <td><input class = "checked${i}" contenteditable = "true" type = "checkbox" onchange = "verifyChecked(${student.key}, ${i})"${x}></td>
                         <td class = "name${i}" contenteditable="true">${student.name}</td>
@@ -442,12 +441,12 @@ function updatePoints() {
     let events = getJSON('events.json');
     // let studentName = document.querySelector(".newName").value; // get the input value for the student name
     let studentName = [];
-    for(i of users)
-        if(checkedArr.includes(i.key))
+    for (i of users)
+        if (checkedArr.includes(i.key))
             studentName.push(i.name);
     let add = document.querySelector(".add").checked;
     let remove = document.querySelector(".remove").checked;
-    
+
     let addRemove;
     if (add) addRemove = "add";
     else if (remove) addRemove = "remove";
@@ -501,8 +500,14 @@ function saveChanges(key, num) {
     filter();
 }
 
-
-
+function errorPopup(title = 'Error') {
+    let errorModal = document.querySelector('.error__box');
+    document.querySelector('.error__title').innerHTML = title;
+    errorModal.classList.add('fade');
+    setTimeout(function () {
+        errorModal.classList.remove('fade');
+    }, 2000);
+}
 
 function deleteStudent(key) {
     let users = getJSON("user.json");
@@ -513,40 +518,43 @@ function deleteStudent(key) {
     uploadJSON(users, "user.json");
     filter();
 }
-
+//<button class="save-button">Save Changes</button>
+//<input class = "save-button" type = "button" value = "Save changes">
 function addNewStudent() {
-    // Create a new row in the table
     let newRow = document.createElement('tr');
-    newRow.innerHTML = `<td></td>
-   <td><input class="limit__width" type="text" class="new-name"></td>
-                      <td><input class="limit__width" type="number" min = 9 max = 12 class="new-grade"></td>
-                      <td><input class="limit__width" type="text" class="new-username"></td>
-                      <td><input class="limit__width" type="text" class="new-password"></td>
-                      <td><input class="limit__width" type="number" min="0" class="new-points"></td>
-                      <td><input class="limit__width" type="text" class="new-currentPrize"></td>
-                      <td><input class="limit__width" type="checkbox" class="new-admin" checked></td>
-                      <td>
-                         <button class="save-button">Save Changes</button>
-                         <button class="delete-button">Delete</button>
-                      </td>`;
+    let button = document.querySelector('#save-button');
+  
+    newRow.innerHTML = `
+      <td></td>
+      <td><input class = "limit__width" id="new-name" type="text"></td>
+      <td><input class = "limit__width" id="new-grade" type="number" min="9" max="12"></td>
+      <td><input class = "limit__width" id="new-username" type="text"></td>
+      <td><input class = "limit__width" id="new-password" type="text"></td>
+      <td><input class = "limit__width" id="new-points" type="number" min="0"></td>
+      <td><input class = "limit__width" id="new-currentPrize" type="text"></td>
+      <td><input class = "limit__width" id="new-admin" type="checkbox" checked></td>
+      <td>
+        <button id="save-changes" type="button">Save Changes</button>
+        <button id="delete" type="button">Delete</button>
+      </td>
+    `;
+  
     document.querySelector('#students-table tbody').appendChild(newRow);
-
-    // Add event listener for the delete button
-    let deleteButton = newRow.querySelector('.delete-button');
+  
+    let deleteButton = newRow.querySelector('#delete');
     deleteButton.addEventListener('click', function () {
         newRow.remove();
     });
-
-    // Add event listener for the save button
-    let saveButton = newRow.querySelector('.save-button');
+  
+    let saveButton = newRow.querySelector('#save-changes');
     saveButton.addEventListener('click', function () {
-        let newName = newRow.querySelector('.new-name').value;
-        let newGrade = newRow.querySelector('.new-grade').value;
-        let newUsername = newRow.querySelector('.new-username').value;
-        let newPassword = newRow.querySelector('.new-password').value;
-        let newPoints = newRow.querySelector('.new-points').value;
-        let newCurrentPrize = newRow.querySelector('.new-currentPrize').value;
-        let newAdmin = newRow.querySelector('.new-admin').checked;
+        let newName = document.querySelector('#new-name').value;
+        let newGrade = document.querySelector('#new-grade').value;
+        let newUsername = document.querySelector('#new-username').value;
+        let newPassword = document.querySelector('#new-password').value;
+        let newPoints = document.querySelector('#new-points').value;
+        let newCurrentPrize = document.querySelector('#new-currentPrize').value;
+        let newAdmin = document.querySelector('#new-admin').checked;
         let studentData = getJSON("user.json");
         if (newAdmin) {
             newAdmin = true;
@@ -555,35 +563,47 @@ function addNewStudent() {
         }
         if (verifyAddStudent(newName, newGrade, newUsername, newPassword, newPoints, newAdmin, newCurrentPrize)) {
             let arr = [];
-            //find a missing key value in between all the keys of studentData and make the new student have that key, or make the key the highest value
             for (i of studentData) {
                 arr.push(i.key);
             }
             let keyToPush = [...Array(Math.max(...arr) + 1).keys()].filter(x => !arr.includes(x)).concat([Math.max(...arr) + 1])[0];
-            studentData.push({ name: newName, grade: newGrade, username: newUsername, password: newPassword, points: parseInt(newPoints), currentPrize: newCurrentPrize, admin: newAdmin, key: keyToPush });
+            studentData.push({ name: newName, grade: newGrade, username: newUsername, password: newPassword, points: parseInt(newPoints), currentPrize: newCurrentPrize, admin: newAdmin, key: keyToPush, pastEvents: [], pastPrizes: [] });
             uploadJSON(studentData, "user.json");
         }
         filter();
     });
 }
 
+
 function verifyAddStudent(name, grade, username, password, points, admin, currentPrize) {
     let users = getJSON("user.json");
+    if(name < 3){
+        errorPopup('Name is too small');
+        return false;
+    }
+    if(grade < 9 || grade > 12){
+        errorPopup('Grade does not fit criteria');
+        return false;
+    }
+    if(points < 0){
+        errorPopup('Points cannot be lower than 0');
+        return false;
+    }
     if (password.includes(" ")) {
-        console.log("Password cannot contain spaces");
+        errorPopup('Password contains spaces');
         return false;
     }
     if (password.length < 2) {
-        console.log("Password is too short, try again");
+        errorPopup("Password is too short, try again");
         return false;
     }
     if (username < 2) {
-        console.log("Username is too short, try again");
+        errorPopup("Username is too short, try again");
         return false;
     }
     for (let i = 0; i < users.length; i++)
         if (username == users[i].username) {
-            console.log("Username is already included, try again");
+            errorPopup("Username is already included, try again");
             return false;
         }
     return true;
