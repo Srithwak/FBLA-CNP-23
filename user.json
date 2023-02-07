@@ -2,8 +2,8 @@
   {
     "name": "adele",
     "grade": "12",
-    "username": "numt",
-    "password": "bigboi1",
+    "username": "ion",
+    "password": "ionIsTheBest",
     "points": 100,
     "currentPrize": "None",
     "admin": true,
@@ -12,10 +12,10 @@
     "key": 4
   },
   {
-    "name": "adere",
+    "name": "praneeth",
     "grade": "11",
-    "username": "nil",
-    "password": "bigboi4",
+    "username": "pacMan",
+    "password": "pacMan1234",
     "points": 600,
     "currentPrize": "None",
     "admin": true,
@@ -24,10 +24,10 @@
     "key": 2
   },
   {
-    "name": "adyi",
+    "name": "johnny",
     "grade": "10",
-    "username": "yiyp",
-    "password": "ticket",
+    "username": "john",
+    "password": "johnTheBest",
     "points": 256,
     "currentPrize": "None",
     "admin": true,
@@ -48,10 +48,10 @@
     "key": 3
   },
   {
-    "name": "rirt",
+    "name": "rithwak",
     "grade": "12",
-    "username": "nun",
-    "password": "ghgf",
+    "username": "rit",
+    "password": "quack",
     "points": 111,
     "currentPrize": "rit",
     "admin": false,
