@@ -2,202 +2,184 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>haha</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+        integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
 </head>
 
 <body>
-
-    <div class="alert__box" style="display: block;">
-        <h2 class="alert__title">Alert title</h2>
-     </div>
-  
-     <div class="warning__box" style="display: block;">
-        <h2 class="warning__title">Warning title</h2>
-     </div>
-     
-     <div class="error__box" style="display: block;">
+    <div class="error__box" style="display: block;">
         <h2 class="error__title">Error title</h2>
-     </div>
-  
+    </div>
+
 
     <nav class="nav">
-   <!-- <iframe src="./hamburger.html"></iframe> -->
- 
-   <form>
-      <div class="text-boxes">
-         <input class="username" type="text" name="text" placeholder="Username" required><br><br>
-         <input class="password" type="text" name="password" placeholder="Password" required><br><br>
-      </div>
-      <button class="button-85" type="submit">Log In</button>
-   </form>
 
-   <script src="./loginPreload.js"></script>
-   <script src="./hamburgerPreload.js"></script>
+        <form>
+            <div class="text-boxes">
+                <div class="inside">
+                    <h1 class = "login">Login</h1>
+                    <input class="username" type="text" name="text" placeholder="Username"
+                        required><br><br>
+                    <input class="password" type="password" name="password" placeholder="Password" required><br><br>
+                    <div class="btn_box">
+                        <button class="button-85" type="submit">Log In</button>
+                    </div>
+                </div>
 
-   <style>
-    .button-85 {
-  padding: 0.6em 2em;
-  border: none;
-  outline: none;
-  color: rgb(255, 255, 255);
-  background: #111;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  border-radius: 10px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
 
-.button-85:before {
-  content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  background-size: 400%;
-  z-index: -1;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
-  animation: glowing-button-85 20s linear infinite;
-  transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
-}
+            </div>
+            
 
-@keyframes glowing-button-85 {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 400% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
+        </form>
 
-.button-85:after {
-  z-index: -1;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  left: 0;
-  top: 0;
-  border-radius: 10px;
-}
-      form {
-         background-color: #f00;
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         width: 20rem;
-         text-align: center;
-         padding: 2rem;
-         border-radius: .5rem;
-         /* height: 20rem; */
-      }
+        <script src="./loginPreload.js"></script>
+        <script src="./hamburgerPreload.js"></script>
 
-      input {
-         padding: .5rem;
-         border: none;
-         border-radius: .25rem;
-      }
+        <style>
+            .button-85 {
+                padding: 0.6em 2em;
+                border: none;
+                outline: none;
+                color: rgb(255, 255, 255);
+                background: #111;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+            }
 
-      button {
-         padding: .5rem;
-         border: none;
-         transition: .15s;
-         border-radius: .25rem;
-         background-color: #0f0;
-      }
+            .login {
+                color:rgb(255, 255, 255);
+            }
 
-      button:hover {
-         background-color: #00f;
-      }
+            .button-85:before {
+                content: "";
+                background: linear-gradient(45deg,
+                        #ff0000,
+                        #ff7300,
+                        #fffb00,
+                        #48ff00,
+                        #00ffd5,
+                        #002bff,
+                        #7a00ff,
+                        #ff00c8,
+                        #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                -webkit-filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing-button-85 20s linear infinite;
+                transition: opacity 0.3s ease-in-out;
+                border-radius: 10px;
+            }
 
-      .alert__box {
-         position: fixed;
-         bottom: 1rem;
-         right: 0rem;
-         background-color: #aaa;
-         z-index: 2;
-         width: 15rem;
-         height: 1rem;
-         padding: 1rem;
-         border-radius: .25rem;
+            @keyframes glowing-button-85 {
+                0% {
+                    background-position: 0 0;
+                }
 
-         opacity: 0;
-         transition: opacity .5s;
-      }
+                50% {
+                    background-position: 400% 0;
+                }
 
-      .warning__box {
-         position: fixed;
-         bottom: 1rem;
-         right: 0rem;
-         background-color: #ffb85c;
-         z-index: 2;
-         width: 15rem;
-         height: 1rem;
-         padding: 1rem;
-         border-radius: .25rem;
+                100% {
+                    background-position: 0 0;
+                }
+            }
 
-         opacity: 0;
-         transition: opacity .5s;
-      }
+            .button-85:after {
+                z-index: -1;
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #222;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
 
-      .error__box {
-         position: fixed;
-         bottom: 1rem;
-         right: 0rem;
-         background-color: #ff6969;
-         z-index: 2;
-         width: 15rem;
-         height: 1rem;
-         padding: 1rem;
-         border-radius: .25rem;
+            form {
+                background-color: rgb(47, 3, 3);
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding: 2rem;
+                border-radius: .5rem;
+                /* height: 20rem; */
+            }
 
-         opacity: 0;
-         transition: opacity .5s;
-      }
+            input {
+                padding: .5rem;
+                border: none;
+                border-radius: .25rem;
+            }
 
-      .alert__title,
-      .alert__description,
-      .warning__title,
-      .warning__description,
-      .error__title,
-      .error__description {
-        font-size: 1rem;
-         color: #333;
-         margin: 0;
-      }
+            .inside {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
 
-      .fade {
-         opacity: 1;
-      }
+            button {
+                padding: .5rem;
+                border: none;
+                transition: .15s;
+                border-radius: .25rem;
+                background-color: #0f0;
+            }
 
-   </style>
+            button:hover {
+                background-color: #00f;
+            }
+
+            .error__box {
+                position: fixed;
+                bottom: 1rem;
+                right: 0rem;
+                background-color: #ff6969;
+                z-index: 2;
+                width: 30rem;
+                height: 1rem;
+                padding: 1rem;
+                border-radius: .25rem;
+
+                opacity: 0;
+                transition: opacity .5s;
+            }
+
+            .alert__title,
+            .alert__description,
+            .warning__title,
+            .warning__description,
+            .error__title,
+            .error__description {
+                font-size: 1rem;
+                color: #333;
+                margin: 0;
+            }
+
+            .fade {
+                opacity: 1;
+            }
+        </style>
 </body>
 
 </html>

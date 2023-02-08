@@ -1,10 +1,10 @@
 [
   {
-    "name": "adele",
-    "grade": "12",
-    "username": "ion",
-    "password": "ionIsTheBest",
-    "points": 100,
+    "name": "Bob",
+    "grade": "11",
+    "username": "admin1",
+    "password": "admin123",
+    "points": 0,
     "currentPrize": "None",
     "admin": true,
     "pastEvents": [],
@@ -12,67 +12,33 @@
     "key": 4
   },
   {
-    "name": "praneeth",
-    "grade": "11",
-    "username": "pacMan",
-    "password": "pacMan1234",
+    "name": "Josh",
+    "grade": "12",
+    "username": "joshP",
+    "password": "Josh90",
     "points": 600,
     "currentPrize": "None",
-    "admin": true,
+    "admin": false,
     "pastEvents": [],
     "pastPrizes": [],
     "key": 2
   },
   {
-    "name": "johnny",
-    "grade": "10",
-    "username": "john",
-    "password": "johnTheBest",
-    "points": 256,
-    "currentPrize": "None",
-    "admin": true,
-    "pastEvents": [],
-    "pastPrizes": [],
-    "key": 1
-  },
-  {
-    "name": "adme",
-    "grade": "12",
-    "username": "numb",
-    "password": "bigboi3",
-    "points": 101,
-    "currentPrize": "None",
-    "admin": true,
-    "pastEvents": [],
-    "pastPrizes": [],
-    "key": 3
-  },
-  {
-    "name": "rithwak",
-    "grade": "12",
-    "username": "rit",
-    "password": "quack",
-    "points": 111,
-    "currentPrize": "rit",
+    "name": "John",
+    "grade": "9",
+    "username": "John08",
+    "password": "john081",
+    "points": 400,
+    "currentPrize": "KeyChain",
     "admin": false,
+    "key": 0,
     "pastEvents": [
-      "footbal"
+      "Chess",
+      "Acting",
+      "Fencing",
+      "Volunteering",
+      "Pep Rally"
     ],
-    "pastPrizes": [],
-    "key": 0
-  }, 
-  {
-    "name": "pp",
-    "grade": "12",
-    "username": "rit",
-    "password": "quack",
-    "points": 111,
-    "currentPrize": "rit",
-    "admin": false,
-    "pastEvents": [
-      "footbal"
-    ],
-    "pastPrizes": [],
-    "key": 9
+    "pastPrizes": []
   }
 ]

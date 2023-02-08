@@ -25,6 +25,7 @@ function markAllAsRead() {
     for (i of notifs)
         i.read = true;
     uploadJSON(notifs, 'notifications.json');
+    displayNotifs();
 }
 
 function markAllAsUnread() {
@@ -32,9 +33,8 @@ function markAllAsUnread() {
     for (i of notifs)
         i.read = false;
     uploadJSON(notifs, 'notifications.json');
+    displayNotifs();
 }
-
-
 
 function checkAll() { //not html
     checkedArr = [];
@@ -221,8 +221,6 @@ function displayNotifs() {
     let notifs = getJSON("notifications.json");
     let tableBody = document.querySelector('#notifications-table');
     tableBody.innerHTML = "<tr><th>check</th><th>Name</th><th>Message</th><th>Misc</th><th>Actions</th><th>Read/unread</th></tr>";
-
-    //    let x = "checked";
     for (let i = 0; i < notifs.length; i++) {
         let x;
         if (checkedArr.includes(notifs[i].key)) {

@@ -1,53 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src = "stuNotifsPreload.js"></script>
+    <title>Student</title>
+    <script src="stuNotifsPreload.js"></script>
 </head>
-<body onload = "filter()">
+
+<body onload="filter()">
+    <div class="error__box" style="display: block;">
+        <h2 class="error__title">Error title</h2>
+    </div>
 
     <header>
         <nav class="nav__wrapper">
+            <img class="imgt" src = "logo.png">
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="./notifications.html" 
-                    <li class="nav__item"><a href="./login.html" class="nav__link">Signout</a></li>
+                    <li class="nav__item"><a href="./notifications.html" <li class="nav__item"><a href="./login.html"
+                                class="nav__link">Signout</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
-    <form action="">
-        <h1 class="user"></h1>
-        <h1 class="grade"></h1>
-        <h1 class="username"></h1>
-        <h1 class="password"></h1>
-        <h1 class="points"></h1>
-        <h1 class="currentPrize"></h1>
-        <table id="event-table">
-           <thead>
-              <tr>
-                 <th>Name</th>
-                 <th>Type</th>
-                 <th>pointsGained</th>
-                 <th>limit</th>
-                 <th>actions</th>
-              </tr>
-           </thead>
-           <tbody></tbody>
-        </table><br>
-        <input type="text" placeholder="message" class = "message">
-        <input type="button" value="Send message" onclick = "askMessage()"><br><br>
-        <input type="text" placeholder="prizes" class = "prize">
-        <input type="button" value="Send Prize" onclick = "askPrize()"><br><br>
-        <input type="button" value="Send admin priveleges" onclick = "askAdmin()"><br><br>
-        <input type="number" min = 0 placeholder="Points" class = "points">
-        <input type="button" value="Send points" onclick = "askPoints()"><br><br>
-        <h1 class = "log">nth</h1>
-    </form>
+    <div class="container">
+        <div class="left__side">
+            <h1>Credentials</h1>
+            <form action="">
+                <h3 class="user"></h3><br>
+                <h3 class="grade"></h3><br>
+                <h3 class="username"></h3><br>
+                <h3 class="password"></h3><br>
+                <h3 class="points"></h3><br>
+                <h3 class="currentPrize"></h3><br>
+        </div>
+        <div class="middle">
+            <table id="event-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Points Gained</th>
+                        <th>Spots left</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table><br>
+        </div>
+        <div class="right__side">
+            <h1>Send Messages</h1>
+            <input type="text" placeholder="Message" class="message">
+            <input type="button" value="Send message" onclick="askMessage()"><br><br>
+            <input type="text" placeholder="Ask for Prize" class="prize">
+            <input type="button" value="Ask for Prize" onclick="askPrize()"><br><br>
+            <input type="button" value="Toggle admin priveleges" onclick="askAdmin()"><br><br>
+            <input type="number" min=0 placeholder="Points" class="points">
+            <input type="button" value="Ask for points" onclick="askPoints()"><br><br>
+            <h1>Log</h1>
+            <h4 class="log"></h4>
+        </div>
+        </form>
+    </div>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
@@ -62,6 +78,36 @@
             padding: 0;
             margin: 0;
         }
+
+        .error__box {
+                position: fixed;
+                bottom: 1rem;
+                right: 0rem;
+                background-color: #ff6969;
+                z-index: 2;
+                width: 30rem;
+                height: 1rem;
+                padding: 1rem;
+                border-radius: .25rem;
+
+                opacity: 0;
+                transition: opacity .5s;
+            }
+
+            .alert__title,
+            .alert__description,
+            .warning__title,
+            .warning__description,
+            .error__title,
+            .error__description {
+                font-size: 1rem;
+                color: #333;
+                margin: 0;
+            }
+
+            .fade {
+                opacity: 1;
+            }
 
         *::-webkit-scrollbar {
             display: none;
@@ -157,20 +203,20 @@
         }
 
         .left__side {
-            background-color: #aaa;
+            background-color: #bd7d7d;
             position: relative;
             padding: 2rem;
         }
 
         .middle {
-            background-color: #ccc;
+            background-color: #ac9d9d;
             position: relative;
             min-height: calc(100vh - 3rem);
             padding: 2rem;
         }
 
         .right__side {
-            background-color: #aaa;
+            background-color: #bd7d7d;
             position: relative;
             padding: 2rem;
         }
@@ -213,6 +259,11 @@
             transition: .15s;
         }
 
+        .imgt {
+            width: 100;
+            height: 50px;
+        }
+
         button:hover {
             color: #fff;
         }
@@ -244,4 +295,5 @@
         }
     </style>
 </body>
+
 </html>

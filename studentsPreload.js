@@ -49,24 +49,31 @@ function onload() {
 
 function randWinner() {
     let h1;
+    let h2;
+    let h3;
+    let h4;
     onload();
     if (grades.x9.length > 0)
         h1 = "Grade 9: " + grades.x9[getRandomInt(grades.x9.length)].name + " ";
     else h1 = "No students in grade 9 exist ";
     if (grades.x10.length > 0)
-        h1 += "Grade 10: " + grades.x10[getRandomInt(grades.x10.length)].name + " ";
-    else h1 += "No students in grade 10 exist ";
+        h2 = "Grade 10: " + grades.x10[getRandomInt(grades.x10.length)].name + " ";
+    else h2 = "No students in grade 10 exist ";
     if (grades.x11.length > 0)
-        h1 += "Grade 11: " + grades.x11[getRandomInt(grades.x11.length)].name + " ";
-    else h1 += "No students in grade 11 exist ";
+        h3 = "Grade 11: " + grades.x11[getRandomInt(grades.x11.length)].name + " ";
+    else h3 = "No students in grade 11 exist ";
     if (grades.x12.length > 0)
-        h1 += "Grade 12: " + grades.x12[getRandomInt(grades.x12.length)].name;
-    else h1 += "No students in grade 12 exist ";
-    document.querySelector(".randWinner").textContent = h1;
+        h4 = "Grade 12: " + grades.x12[getRandomInt(grades.x12.length)].name;
+    else h4 = "No students in grade 12 exist ";
+    document.querySelector(".randWinner9").textContent = h1;
+    document.querySelector(".randWinner10").textContent = h2;
+    document.querySelector(".randWinner11").textContent = h3;
+    document.querySelector(".randWinner12").textContent = h4;
 }
 
 function topWinner() {
     onload();
+    let h1, h2, h3, h4;
     let top = {
         x9: "",
         x10: "",
@@ -126,7 +133,7 @@ function topWinner() {
                     points: grades.x11[i].points
                 };
             else if (grades.x11[i].points == count11[0].points) {
-                counter++;
+                counter11++;
                 count11[counter11] = {
                     name: grades.x11[i].name,
                     points: grades.x11[i].points
@@ -146,16 +153,14 @@ function topWinner() {
                     points: grades.x12[i].points
                 };
             else if (grades.x12[i].points == count12[0].points) {
-                counter++;
+                counter12++;
                 count12[counter12] = {
                     name: grades.x12[i].name,
                     points: grades.x12[i].points
                 };
             }
-
-    let h1 = "";
     if (count9.length === 1) {
-        h1 += `The top winner in grade 9 is ${count9[0].name} with ${count9[0].points} points.`;
+        h1 = `The top winner in grade 9 is ${count9[0].name} with ${count9[0].points} points.`;
     } else if (count9.length > 1) {
         h1 += `The top winners in grade 9 are: `;
         for (let i = 0; i < count9.length; i++) {
@@ -168,44 +173,47 @@ function topWinner() {
     }
 
     if (count10.length === 1) {
-        h1 += `The top winner in grade 10 is ${count10[0].name} with ${count10[0].points} points.`;
+        h2 = `The top winner in grade 10 is ${count10[0].name} with ${count10[0].points} points.`;
     } else if (count10.length > 1) {
-        h1 += `The top winners in grade 10 are: `;
+        h2 += `The top winners in grade 10 are: `;
         for (let i = 0; i < count10.length; i++) {
-            h1 += `${count10[i].name} with ${count10[i].points} points`;
+            h2 += `${count10[i].name} with ${count10[i].points} points`;
             if (i !== count10.length - 1) {
-                h1 += `, `;
+                h2 += `, `;
             }
         }
-        h1 += `. `;
+        h2 += `. `;
     }
 
     if (count11.length === 1) {
-        h1 += `The top winner in grade 11 is ${count11[0].name} with ${count11[0].points} points.`;
+        h3 = `The top winner in grade 11 is ${count11[0].name} with ${count11[0].points} points.`;
     } else if (count11.length > 1) {
-        h1 += `The top winners in grade 11 are: `;
+        h3 += `The top winners in grade 11 are: `;
         for (let i = 0; i < count11.length; i++) {
-            h1 += `${count11[i].name} with ${count11[i].points} points`;
+            h3 += `${count11[i].name} with ${count11[i].points} points`;
             if (i !== count11.length - 1) {
-                h1 += `, `;
+                h3 += `, `;
             }
         }
-        h1 += `. `;
+        h3 += `. `;
     }
 
     if (count12.length === 1) {
-        h1 += `The top winner in grade 12 is ${count12[0].name} with ${count12[0].points} points.`;
+        h4 = `The top winner in grade 12 is ${count12[0].name} with ${count12[0].points} points.`;
     } else if (count12.length > 1) {
-        h1 += `The top winners in grade 12 are: `;
+        h4 = `The top winners in grade 12 are: `;
         for (let i = 0; i < count12.length; i++) {
-            h1 += `${count12[i].name} with ${count12[i].points} points`;
+            h4 += `${count12[i].name} with ${count12[i].points} points`;
             if (i !== count12.length - 1) {
-                h1 += `, `;
+                h4 += `, `;
             }
         }
-        h1 += `.`;
+        h4 += `.`;
     }
-    document.querySelector(".topWinner").textContent = h1;
+    document.querySelector(".topWinner9").textContent = h1;
+    document.querySelector(".topWinner10").textContent = h2;
+    document.querySelector(".topWinner11").textContent = h3;
+    document.querySelector(".topWinner12").textContent = h4;
 }
 
 
@@ -223,7 +231,22 @@ function filter() {
     for (i of users) {
         tmp.push(i.name)
     }
+    filteredData = users;
+    for(let i = 0; i < filteredData.length; i++) {
+        let min = i;
+        for(let j = i+1; j < filteredData.length; j++){
+            if(filteredData[j].points > filteredData[min].points) {
+                min=j; 
+            }
+         }
+         if (min != i) {
+             let tmp = filteredData[i]; 
+             filteredData[i] = filteredData[min];
+             filteredData[min] = tmp;      
+        }
+    }
     let p = tmp.filter(i => i.includes(name));
+    users = filteredData;
     filteredData = [];
     for (let i = 0; i < users.length; i++) {
         if (p.includes(users[i].name)) {
@@ -264,7 +287,7 @@ function filter() {
         tmp = [];
         filteredData = [];
         for (let i = 0; i < users.length; i++) {
-            if (users[i].points <= points) //pushes if the points filtered is less than the students points
+            if (users[i].points <= points) 
                 filteredData.push(users[i]);
         }
     }
@@ -279,22 +302,21 @@ function filter() {
         }
     }
 
-    if (admin) {
-        users = filteredData;
-        tmp = [];
-        filteredData = [];
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].admin === true) {
-                filteredData.push(users[i]);
+    //Filter admin or students
+    if (admin) { //if the user wants it filtered by admins
+        users = filteredData; //sets users to filteredData
+        filteredData = []; //sets filteredData to an empty array
+        for (let i = 0; i < users.length; i++) { //loops through the previously filteredData by other filter algorithms
+            if (users[i].admin === true) { //if the user found in filteredData is an admin
+                filteredData.push(users[i]); //push into filteredData
             }
         }
     } else if (student) {
-        users = filteredData;
-        tmp = [];
-        filteredData = [];
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].admin === false) {
-                filteredData.push(users[i]);
+        users = filteredData; //sets users to filteredData
+        filteredData = []; //sets filteredData to an empty array
+        for (let i = 0; i < users.length; i++) { //loops through the previously filteredData by other filter algorithms
+            if (users[i].admin === false) { //if the user found in filteredData is a student
+                filteredData.push(users[i]); //push into filteredData
             }
         }
     }
@@ -470,8 +492,14 @@ function updatePoints() {
         if (studentName.includes(users[i].name)) { // find the student with the matching name
             if (addRemove === "add") { // check if the user wants to add or remove points
                 users[i].points += parseInt(points); // add the points to the student's current points
+                user[i].pastEvents.push(eventName); // add the event name to the students' log
             } else if (addRemove === "remove") {
                 users[i].points -= parseInt(points); // remove the points from the student's current points
+                for(let p = 0; p < users.pastEvents.length; p++)
+                    if(users[i].pastEvents[p] == eventName) {
+                        users[i].pastEvents[p].splice(p, 1); // remove the event name from the students' log
+                        break;
+                    }
             }
         }
     }

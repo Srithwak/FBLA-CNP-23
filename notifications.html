@@ -10,52 +10,38 @@
 
 <body>
 
-   <header>
-      <nav class="nav__wrapper">
-         <span class="material-symbols-outlined" onclick="enable()">menu</span>
-         <div class="dropdown dropdown__list">
-            <a href="./students.html" class="dropdown__link">Students</a>
-            <a href="./event.html" class="dropdown__link">Events</a>
-            <a href="#" class="dropdown__link">Home</a>
-            <a href="#" class="dropdown__link">Home</a>
-            <a href="#" class="dropdown__link">Home</a>
-         </div>
-         <div class="nav__menu">
-            <ul class="nav__list">
-               <li class="nav__item"><a href="./notifications.html" class="nav__link">Notifications</a></li>
-               <li class="nav__item"><a href="#" class="nav__link">Profile</a></li>
-               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-               <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-               <li class="nav__item"><a href="./login.html" class="nav__link">Signout</a></li>
-            </ul>
-         </div>
-      </nav>
-   </header>
+    <header>
+        <nav class="nav__wrapper">
+            <img class="imgt" src = "logo.png">
+            <div class="nav__menu">
+              <ul class="nav__list">
+                 <li class="nav__item"><a href="./notifications.html" class="nav__link">Notifications</a></li>
+                 <li class="nav__item"><a href="./students.html" class="nav__link">Students</a></li>
+                 <li class="nav__item"><a href="./event.html" class="nav__link">Events/Prizes</a></li>
+                 <li class="nav__item"><a href="./login.html" class="nav__link">Signout</a></li>
+              </ul>
+           </div>
+        </nav>
+     </header>
 
    <div class="container">
 
       <div class="left__side">
          <!-- <input type="button" onclick="displayNotifs()" value="Display notifications"><br><br> -->
-         <input type="button" onclick="deleteNotifications()" value="Clear Notifications"><br><br>
+         <input type="button" onclick="deleteNotifications()" value="Delete Notifications"><br><br>
          <input type="button" onclick="markAllAsRead()" value="Mark All as Read"><br><br>
          <input type="button" onclick="markAllAsUnread()" value="Mark All as Unread"><br><br>
          <input type="button" onclick="checkAll()" value="Check all"><br><br>
-         <input type="button" onclick="clearAllChecked()" value="clear all checked"><br><br>
+         <input type="button" onclick="clearAllChecked()" value="Reset checkboxes"><br><br>
       </div>
-      <div class="right__side">
+      <div class="middle">
 
          <form>
-
-            <!-- <input type="text" name="" id=""> -->
-
-            <!-- <br><br> -->
-
-
             <table id="notifications-table">
                <thead>
                   <tr>
                      <th>
-                     <th>check</th>
+                     <th>Check</th>
                      <th>Name</th>
                      <th>Message</th>
                      <th>Misc</th>
@@ -68,12 +54,7 @@
 
          </form>
       </div>
-
-
-
    </div>
-
-
    <style>
       @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
@@ -118,6 +99,11 @@
       a {
          text-decoration: none;
       }
+
+      .imgt {
+            width: 100;
+            height: 50px;
+        }
 
       .nav__wrapper {
          align-items: center;
@@ -197,21 +183,21 @@
       }
 
       .left__side {
-         background-color: #aaa;
+         background-color: #bd7d7d;
          position: relative;
          padding: 2rem;
          /* border-right: 5px solid black; */
       }
 
       .middle {
-         background-color: #ccc;
+         background-color: #ac9d9d;
          position: relative;
          min-height: calc(100vh - 3rem);
          /* padding: 2rem; */
       }
 
       .right__side {
-         background-color: #ccc;
+         background-color: #bd7d7d;
          position: relative;
          padding: 2rem;
       }

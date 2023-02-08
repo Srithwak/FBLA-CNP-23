@@ -14,6 +14,7 @@ function createWindow(htmlFile = 'login.html', preloadFile = "loginPreload.js") 
       height: 600,
       minHeight: 655,
       minWidth: 600,
+      icon: "logoCirc.png",
       webPreferences: {
          nodeIntegration: true,
          contextIsolation: false,

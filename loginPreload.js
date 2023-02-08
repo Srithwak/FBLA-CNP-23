@@ -22,23 +22,29 @@ function errorPopup(title) {
 }
 
 function logIn() {
-    let user = document.querySelector(".username").value;
-    let pwd = document.querySelector(".password").value;
-    // console.log(`${user}, ${pwd}`);
+    let user = document.querySelector(".username").value; //gets username
+    let pwd = document.querySelector(".password").value;  //gets password
+    let bol = true;
+    //loops through the JSON file and tries to find the username and password
     for (let i = 0; i < data.length; i++) {
-        if (user == data[i].username) {
-            if (pwd == data[i].password) {
-                localStorage.setItem("userObj", JSON.stringify(data[i]));
-                console.log("You're good");
-                if (data[i].admin)
-                    location.href = "students.html";
-                else location.href = "stuNotifs.html";
+        if (user == data[i].username) { //if the username that the user entered is found
+            if (pwd == data[i].password) { //if the passsword the user entered matches the username
+                localStorage.setItem("userObj", JSON.stringify(data[i])); //sets the user object to localStorage
+                if (data[i].admin) {
+                    location.href = "students.html"; //if the user is an admin, redirects to students.html
+                    bol = false;
+                }
+                else {
+                    location.href = "stuNotifs.html"; //if the user is a student, redirects to stuNotifs.html
+                    bol = false;
+                }
                 break;
             } else {
-                errorPopup("Wrong password, try again", 'hia');
+                errorPopup("Wrong password, try again"); //if the password does not match the username
                 break;
             }
         }
-        console.log("Username not included, try again"); //repeats three times for some reason
+        // if(!bol)
+        errorPopup("Username was not found, try again"); //if the username was not found in the database
     }
 }

@@ -1,26 +1,20 @@
 [
   {
-    "name": "rew1",
+    "name": "KeyChain",
     "points": 301,
-    "type": "test",
+    "type": "Spirit Item",
     "key": 1
   },
   {
-    "name": "rew2",
-    "points": 200,
-    "type": "foodReward",
-    "key": 2
+    "name": "Gift Card",
+    "type": "Food Reward",
+    "points": 600,
+    "key": 0
   },
   {
-    "name": "rew3",
-    "points": 400,
-    "type": "other",
-    "key": 3
-  },
-  {
-    "name": "rew4",
-    "type": "schoolReward",
-    "points": 89,
-    "key": 4
+    "name": "Candy",
+    "type": "School Reward",
+    "points": 100,
+    "key": 0
   }
 ]

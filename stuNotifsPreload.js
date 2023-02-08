@@ -70,9 +70,7 @@ function filter() {
        ${signUpVal}`;
         tableBody.appendChild(newRow);
     }
-    // let key1 = JSON.parse(localStorage.getItem('userObj')).key;
     let user = getJSON('user.json')[getIndexFromKey(key1, 'user.json')];
-    // let log = document.querySelector('.log');
     let str = `You have attended a total of ${user.pastEvents.length} events`;
     if(user.pastEvents.length != 0)
         str += `, which include `;
@@ -120,7 +118,7 @@ function askPrize() {
     for(i of prizes)
         arr.push(i.name);
     if(!arr.includes(prizeName)){
-        console.log('Prize does not exist');
+        errorPopup('Prize does not exist');
         return;
     }
     let notifs = getJSON('notifications.json');
@@ -142,6 +140,16 @@ function askPrize() {
     });
     uploadJSON(notifs, 'notifications.json');
 }
+
+function errorPopup(title) {
+    let errorModal = document.querySelector('.error__box');
+    document.querySelector('.error__title').innerHTML = title;
+    errorModal.classList.add('fade');
+    setTimeout(function () {
+        errorModal.classList.remove('fade');
+    }, 1500);
+}
+
 
 function getKeyToPush(arr1) {
     let arr = [];
