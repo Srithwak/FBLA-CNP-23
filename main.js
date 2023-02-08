@@ -3,7 +3,6 @@ const path = require('path');
 const fs = require('fs'); //json
 
 const isDev = process.env.NODE_ENV !== 'development'; //check if admin or not
-// const isDev = true;
 const isMac = process.platform === 'darwin'; //checks if app is running on mac
 
 function createWindow(htmlFile = 'login.html', preloadFile = "loginPreload.js") {
