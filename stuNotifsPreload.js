@@ -34,11 +34,11 @@ function getIndexFromKey(key, file) {
 function filter() {
     let key1 = JSON.parse(localStorage.getItem('userObj')).key;
     document.querySelector('.user').innerHTML = "Name: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].name;
-    document.querySelector('.grade').innerHTML ="Grade: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].grade;
-    document.querySelector('.username').innerHTML ="Username: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].username;
-    document.querySelector('.password').innerHTML ="Password: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].password;
-    document.querySelector('.points').innerHTML ="Points: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].points;
-    document.querySelector('.currentPrize').innerHTML ="Current Prize: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].currentPrize;
+    document.querySelector('.grade').innerHTML = "Grade: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].grade;
+    document.querySelector('.username').innerHTML = "Username: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].username;
+    document.querySelector('.password').innerHTML = "Password: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].password;
+    document.querySelector('.points').innerHTML = "Points: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].points;
+    document.querySelector('.currentPrize').innerHTML = "Current Prize: " + getJSON('user.json')[getIndexFromKey(key1, 'user.json')].currentPrize;
 
     let events = getJSON('events.json');
     for (let i = 0; i < events.length - 1; i++) {
@@ -57,14 +57,17 @@ function filter() {
     let tableBody = document.querySelector('#event-table tbody');
     tableBody.innerHTML = "";
     for (let i = 0; i < filteredData.length; i++) {
-        let signUpVal = "Event is full";
+        let signUpVal = "Event is full or already joined";
         let key1 = JSON.parse(localStorage.getItem('userObj')).key;
         let user = getJSON('user.json')[getIndexFromKey(key1, 'user.json')];
+        let x = "Non Sports";
+        if (filteredData[i].eventType == 'sports')
+            x = 'Sports';
         if (filteredData[i].limit > 0 && !user.pastEvents.includes(filteredData[i].event))
             signUpVal = `<td><input type = "button" onclick = "signUp(${filteredData[i].key})" value = "sign up"></td>`;
         let newRow = document.createElement('tr');
         newRow.innerHTML = `<td> ${filteredData[i].event} </td>
-       <td> ${filteredData[i].eventType} </td>
+       <td> ${x} </td>
        <td> ${filteredData[i].pointsGained} </td>
        <td> ${filteredData[i].limit} </td>
        ${signUpVal}`;
@@ -72,7 +75,7 @@ function filter() {
     }
     let user = getJSON('user.json')[getIndexFromKey(key1, 'user.json')];
     let str = `You have attended a total of ${user.pastEvents.length} events`;
-    if(user.pastEvents.length != 0)
+    if (user.pastEvents.length != 0)
         str += `, which include `;
     else str += `.`
     for (let i = 0; i < user.pastEvents.length; i++)
@@ -81,9 +84,9 @@ function filter() {
         else str += 'and ' + user.pastEvents[i] + '. ';
     // str = "test1";
     str += `You also got ${user.pastPrizes.length} prizes`;
-    if(user.pastPrizes.length != 0)
+    if (user.pastPrizes.length != 0)
         str += `, which include `;
-        else str += `.`
+    else str += `.`
     for (let i = 0; i < user.pastPrizes.length; i++)
         if (i != user.pastPrizes.length - 1)
             str += user.pastPrizes[i] + ', ';
@@ -115,9 +118,9 @@ function askPrize() {
     let message = document.querySelector('.message').value;
     let prizes = getJSON('prizes.json');
     let arr = [];
-    for(i of prizes)
+    for (i of prizes)
         arr.push(i.name);
-    if(!arr.includes(prizeName)){
+    if (!arr.includes(prizeName)) {
         errorPopup('Prize does not exist');
         return;
     }
@@ -150,12 +153,13 @@ function errorPopup(title) {
     }, 1500);
 }
 
-
 function getKeyToPush(arr1) {
     let arr = [];
     for (i of arr1)
         arr.push(i.key);
-    return [...Array(Math.max(...arr) + 1).keys()].filter(x => !arr.includes(x)).concat([Math.max(...arr) + 1])[0];
+    if (arr1.length != 0)
+        return [...Array(Math.max(...arr) + 1).keys()].filter(x => !arr.includes(x)).concat([Math.max(...arr) + 1])[0];
+    return 0;
 }
 
 function askAdmin() {
@@ -179,16 +183,17 @@ function askAdmin() {
 }
 
 function askPoints() {
-    let points = document.querySelector('.points').value;
+    let points = document.querySelector('.points11').value;
     let message = document.querySelector('.message').value;
     let prizes = getJSON('prizes.json');
     let notifs = getJSON('notifications.json');
     let keyToPush = getKeyToPush(notifs);
+    // console.log(keyToPush);
     let key1 = JSON.parse(localStorage.getItem('userObj')).key;
     notifs.push({
         "type": "pointChange",
         "name": JSON.parse(localStorage.getItem('userObj')).name,
-        "pointNum": points,
+        "pointNum": parseInt(points),
         "message": message,
         "actions": [
             "delete",
@@ -198,6 +203,7 @@ function askPoints() {
         "read": false,
         "key": keyToPush
     });
+    console.log(notifs[notifs.length - 1]);
     uploadJSON(notifs, 'notifications.json');
 }
 

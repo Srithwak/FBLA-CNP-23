@@ -378,8 +378,6 @@ function checkAll() {
 
 function givePrizes() {
     let users = getJSON("user.json");
-    // let adminAssign = document.getElementById("adminAssign").checked;
-    // let adminAssign = false;
     let prizes = getJSON("prizes.json");
 
     for (let i = 0; i < prizes.length; i++) {
@@ -397,6 +395,7 @@ function givePrizes() {
         for (let p = 0; p < prizes.length; p++) {
             if (users[i].points >= prizes[p].points && checkedArr.includes(users[i].key)) {
                 users[i].currentPrize = prizes[p].name;
+                users[i].pastPrizes.push(prizes[p].name);
                 break;
             }
         }
@@ -426,12 +425,14 @@ function resetPrizes() {
     let users = getJSON("user.json");
     for (let i = 0; i < users.length; i++) {
         if (checkedArr.includes(users[i].key)) {
+            users[i].pastPrizes = users[i].pastPrizes.filter(e => e !== users[i].currentPrize);
             users[i].currentPrize = "None";
         }
     }
-    uploadJSON(users, 'user.json');
-    filter();
+    uploadJSON(users, 'user.json'); // Assuming uploadJSON() works correctly
+    filter(); // Assuming filter() works correctly
 }
+
 
 function cancelChanges(key, index) {
     let users = getJSON("user.json");
@@ -492,12 +493,12 @@ function updatePoints() {
         if (studentName.includes(users[i].name)) { // find the student with the matching name
             if (addRemove === "add") { // check if the user wants to add or remove points
                 users[i].points += parseInt(points); // add the points to the student's current points
-                user[i].pastEvents.push(eventName); // add the event name to the students' log
+                users[i].pastEvents.push(eventName); // add the event name to the students' log
             } else if (addRemove === "remove") {
                 users[i].points -= parseInt(points); // remove the points from the student's current points
-                for(let p = 0; p < users.pastEvents.length; p++)
+                for(let p = 0; p < users[i].pastEvents.length; p++)
                     if(users[i].pastEvents[p] == eventName) {
-                        users[i].pastEvents[p].splice(p, 1); // remove the event name from the students' log
+                        users[i].pastEvents.splice(p, 1); // remove the event name from the students' log
                         break;
                     }
             }
@@ -556,8 +557,7 @@ function deleteStudent(key) {
     uploadJSON(users, "user.json");
     filter();
 }
-//<button class="save-button">Save Changes</button>
-//<input class = "save-button" type = "button" value = "Save changes">
+
 function addNewStudent() {
     let newRow = document.createElement('tr');
     let button = document.querySelector('#save-button');

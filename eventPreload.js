@@ -66,8 +66,8 @@ function saveChanges() {
     events.push({
         event: eventName,
         eventType: eventType,
-        pointsGained: pointsGained,
-        limit: limit,
+        pointsGained: parseInt(pointsGained),
+        limit: parseInt(limit),
         key: getKeyToPush(events)
     });
 
@@ -104,14 +104,16 @@ function saveChangesEvent(index) { //the whole function doesn't work
         let eventType = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(2)`).innerHTML;
         let pointsGained = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(3)`).innerHTML;
         let limit = document.querySelector(`#event-table tbody tr:nth-child(${index + 1}) td:nth-child(4)`).innerHTML;
+        pointsGained = parseInt(pointsGained); //does not make it a number dunno y
+        limit = parseInt(limit); //does not make it a number dunno y
         eventName = eventName.split(' ');
         eventName = eventName[1];
         eventType = eventType.split(' ');
         eventType = eventType[1];
         eventData[index].event = eventName;
         eventData[index].eventType = eventType;
-        eventData[index].pointsGained = parseInt(pointsGained);
-        eventData[index].limit = parseInt(limit);
+        eventData[index].pointsGained = pointsGained;
+        eventData[index].limit = limit;
         uploadJSON(eventData, "events.json");
         console.log(eventData);
     }
@@ -199,32 +201,34 @@ function filterPrizes() {
     let points = document.querySelector(".points1").value;
     let filteredData = getJSON("prizes.json");
 
-    if (name != null && name != "") {
-        filteredData = filteredData.filter(i => i.name1.includes(name));
+    if (name !== null && name !== "") {
+        filteredData = filteredData.filter(i => i.name.includes(name));
     }
-    if (type != null && type != "") {
-        filteredData = filteredData.filter(i => i.type1.includes(type));
+    if (type !== null && type !== "") {
+        filteredData = filteredData.filter(i => i.type.includes(type));
     }
-    if (points != null && points != "" && points != 0) {
-        filteredData = filteredData.filter(i => i.points1 <= points); //does not work properly
+    if (points !== null && points !== "" && points !== 0) {
+        filteredData = filteredData.filter(i => i.points <= points);
     }
 
-    document.querySelector('#Prizes-table tbody').innerHTML = "";
+    let tableBody = document.querySelector("#Prizes-table tbody");
+    tableBody.innerHTML = "";
     for (let i = 0; i < filteredData.length; i++) {
         let prize = filteredData[i];
         let row = `<tr>
-                          <td contenteditable="true">${prize.name}</td>
-                          <td contenteditable="true">${prize.type}</td>
-                          <td contenteditable="true">${prize.points}</td>
-                          <td><button onclick="saveChangesPrizes(${i})">Save Changes</button>
-                              <button onclick="cancelChangesPrize(${i})">Cancel</button>
-                              <button onclick="deletePrize(${i})">Delete</button>
-                          </td>
-                          
-                      </tr>`;
-        document.querySelector('#Prizes-table tbody').innerHTML += row;
+                    <td contenteditable="true">${prize.name}</td>
+                    <td contenteditable="true">${prize.type}</td>
+                    <td contenteditable="true">${prize.points}</td>
+                    <td>
+                      <button onclick="saveChangesPrizes(${i})">Save Changes</button>
+                      <button onclick="cancelChangesPrize(${i})">Cancel</button>
+                      <button onclick="deletePrize(${i})">Delete</button>
+                    </td>
+                  </tr>`;
+        tableBody.innerHTML += row;
     }
 }
+
 
 function addPrize() {
     // Create a new row in the table
@@ -243,7 +247,7 @@ function addPrize() {
     deleteButton.addEventListener('click', function () {
         newRow.remove();
     });
-    
+
     // Add event listener for the save button
     let saveButton = newRow.querySelector('.save-button');
     saveButton.addEventListener('click', function () {

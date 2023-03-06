@@ -107,14 +107,10 @@ function deleteNotif(key) {
 
 function deleteNotifications() {
     let notifs = getJSON('notifications.json');
-    console.log(checkedArr)
-    for (let i = 0; i < notifs.length; i++)
+    for (let i = notifs.length - 1; i >= 0; i--)
         if (checkedArr.includes(notifs[i].key)) {
-            // console.log(notifs.splice(i, 1));
             notifs.splice(i, 1);
-            console.log(notifs[i].key);
         }
-    // console.log(notifs);
     uploadJSON(notifs, 'notifications.json');
     displayNotifs();
 }
@@ -124,8 +120,9 @@ function givePrize(key) {
     let notifsIndex = getIndexFromKey(key, "notifications.json");
     let users = getJSON("user.json");
     let usersIndex = getIndexFromKey(getKeyFromName(notifs[notifsIndex].name, "user.json"), "user.json");
+    console.log(notifs[notifsIndex]);
     users[usersIndex].currentPrize = notifs[notifsIndex].prizeName;
-    // console.log(users[usersIndex].currentPrize);
+    users[usersIndex].pastPrizes.push(notifs[notifsIndex].prizeName);
     uploadJSON(users, 'user.json');
     displayNotifs();
 }
@@ -135,8 +132,8 @@ function removePrize(key) {
     let notifsIndex = getIndexFromKey(key, "notifications.json");
     let users = getJSON("user.json");
     let usersIndex = getIndexFromKey(getKeyFromName(notifs[notifsIndex].name, "user.json"), "user.json");
+    // users[usersIndex].pastPrizes = users[usersIndex].pastPrizes.filter(e => e !== users[i].currentPrize);
     users[usersIndex].currentPrize = "None";
-    // console.log(users[usersIndex].currentPrize);
     uploadJSON(users, 'user.json');
     displayNotifs();
 }
@@ -174,20 +171,7 @@ function makeAdmin(key) {
     let notifsIndex = getIndexFromKey(key, "notifications.json");
     let users = getJSON("user.json");
     let usersIndex = getIndexFromKey(getKeyFromName(notifs[notifsIndex].name, "user.json"), "user.json");
-    //     let usersIndex;
-    //     for (i of users){
-    //         console.log(i.name)
-    //     if (i.name == notifs[notifsIndex].name) {
-    //         usersIndex = i.key;
-    //     }
-    // }
-    //     console.log(usersIndex)
-    //     usersIndex = getIndexFromKey(usersIndex, 'user.json');
-    // console.log(usersIndex)
-
     users[usersIndex].admin = true;
-    // console.log(users[usersIndex]);
-    // console.log(users)
     uploadJSON(users, 'user.json');
     displayNotifs();
 }
@@ -212,8 +196,8 @@ function changePoints(key) {
     let usersIndex = getIndexFromKey(getKeyFromName(notifs[notifsIndex].name, "user.json"), "user.json");
     console.log(getKeyFromName(notifs[notifsIndex].name, "user.json"));
     users[usersIndex].points = notifs[notifsIndex].pointNum;
-    console.log(users[usersIndex]);
-    //    uploadJSON(users, 'user.json');
+    // console.log(users[usersIndex]);
+       uploadJSON(users, 'user.json');
     displayNotifs();
 }
 

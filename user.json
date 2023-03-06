@@ -4,41 +4,57 @@
     "grade": "11",
     "username": "admin1",
     "password": "admin123",
-    "points": 0,
+    "points": 10,
     "currentPrize": "None",
     "admin": true,
-    "pastEvents": [],
+    "pastEvents": [
+      "Chess"
+    ],
     "pastPrizes": [],
     "key": 4
-  },
-  {
-    "name": "Josh",
-    "grade": "12",
-    "username": "joshP",
-    "password": "Josh90",
-    "points": 600,
-    "currentPrize": "None",
-    "admin": false,
-    "pastEvents": [],
-    "pastPrizes": [],
-    "key": 2
   },
   {
     "name": "John",
     "grade": "9",
     "username": "John08",
     "password": "john081",
-    "points": 400,
-    "currentPrize": "KeyChain",
+    "points": 410,
+    "currentPrize": "None",
     "admin": false,
     "key": 0,
     "pastEvents": [
-      "Chess",
       "Acting",
       "Fencing",
       "Volunteering",
-      "Pep Rally"
+      "Pep Rally",
+      "Chess"
     ],
+    "pastPrizes": []
+  },
+  {
+    "name": "Josh",
+    "grade": "12",
+    "username": "joshP",
+    "password": "Josh90",
+    "points": 23,
+    "admin": false,
+    "pastEvents": [],
+    "pastPrizes": [
+      "KeyChain"
+    ],
+    "key": 2,
+    "currentPrize": "None"
+  },
+  {
+    "name": "OMG",
+    "grade": "12",
+    "username": "442",
+    "password": "rir",
+    "points": 56,
+    "currentPrize": "None",
+    "admin": true,
+    "key": 1,
+    "pastEvents": [],
     "pastPrizes": []
   }
 ]
