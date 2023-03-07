@@ -1,1 +1,64 @@
-[]
+[
+  {
+    "type": "message",
+    "name": "Rithwak",
+    "message": "Change username to SRithwak",
+    "actions": [
+      "delete",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 0
+  },
+  {
+    "type": "prizeAssign",
+    "name": "Rithwak",
+    "prizeName": "KeyChain",
+    "message": "",
+    "actions": [
+      "delete",
+      "givePrize",
+      "removePrize",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 1
+  },
+  {
+    "type": "message",
+    "name": "Siddhesh",
+    "message": "Change password to sidP23",
+    "actions": [
+      "delete",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 2
+  },
+  {
+    "type": "pointChange",
+    "name": "Siddhesh",
+    "pointNum": 688,
+    "message": "Forgot to sign up for a previous event",
+    "actions": [
+      "delete",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 3
+  },
+  {
+    "type": "adminPriveleges",
+    "name": "Josh",
+    "message": "I would like to help with admin management",
+    "actions": [
+      "delete",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 5
+  }
+]

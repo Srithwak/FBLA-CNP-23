@@ -31,12 +31,12 @@ function logIn() {
             if (pwd == data[i].password) { //if the passsword the user entered matches the username
                 localStorage.setItem("userObj", JSON.stringify(data[i])); //sets the user object to localStorage
                 if (data[i].admin) {
-                    location.href = "students.html"; //if the user is an admin, redirects to students.html
                     bol = false;
+                    location.href = "students.html"; //if the user is an admin, redirects to students.html
                 }
                 else {
-                    location.href = "stuNotifs.html"; //if the user is a student, redirects to stuNotifs.html
                     bol = false;
+                    location.href = "stuNotifs.html"; //if the user is a student, redirects to stuNotifs.html
                 }
                 break;
             } else {
@@ -44,7 +44,7 @@ function logIn() {
                 break;
             }
         }
-        // if(!bol)
+        if(bol)
         errorPopup("Username was not found, try again"); //if the username was not found in the database
     }
 }

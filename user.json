@@ -32,29 +32,69 @@
     "pastPrizes": []
   },
   {
+    "name": "Johnson",
+    "grade": "12",
+    "username": "admin27",
+    "password": "ito89",
+    "points": 1,
+    "currentPrize": "None",
+    "admin": true,
+    "key": 3,
+    "pastEvents": [],
+    "pastPrizes": []
+  },
+  {
+    "name": "Rithwak",
+    "grade": "12",
+    "username": "rit123",
+    "password": "test23",
+    "points": 305,
+    "currentPrize": "None",
+    "admin": false,
+    "key": 1,
+    "pastEvents": [
+      "NHS Volunteering",
+      "Football",
+      "Ted Talk",
+      "Chess"
+    ],
+    "pastPrizes": [
+      "Gift Card(50)",
+      "Headphones"
+    ]
+  },
+  {
+    "name": "Siddhesh",
+    "grade": "10",
+    "username": "Sid06",
+    "password": "sidP",
+    "points": 678,
+    "currentPrize": "None",
+    "admin": false,
+    "key": 5,
+    "pastEvents": [
+      "Chess",
+      "Golf"
+    ],
+    "pastPrizes": []
+  },
+  {
     "name": "Josh",
     "grade": "12",
     "username": "joshP",
     "password": "Josh90",
     "points": 23,
     "admin": false,
-    "pastEvents": [],
+    "pastEvents": [
+      "Talent Show",
+      "NHS Volunteering",
+      "Football"
+    ],
     "pastPrizes": [
+      "Walkite-Talkie",
       "KeyChain"
     ],
     "key": 2,
     "currentPrize": "None"
-  },
-  {
-    "name": "OMG",
-    "grade": "12",
-    "username": "442",
-    "password": "rir",
-    "points": 56,
-    "currentPrize": "None",
-    "admin": true,
-    "key": 1,
-    "pastEvents": [],
-    "pastPrizes": []
   }
 ]

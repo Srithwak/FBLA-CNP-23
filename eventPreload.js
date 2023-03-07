@@ -183,9 +183,12 @@ function filter() {
     let tableBody = document.querySelector('#event-table tbody');
     tableBody.innerHTML = "";
     for (let i = 0; i < filteredData.length; i++) {
+        let p = "Non Sports";
+        if(filteredData[i].eventType == "sports")
+            p = "Sports";
         let newRow = document.createElement('tr');
         newRow.innerHTML = `<td contenteditable ="true" > ${filteredData[i].event} </td>
-      <td contenteditable ="true" > ${filteredData[i].eventType} </td>
+      <td contenteditable ="true" > ${p} </td>
       <td contenteditable ="true" > ${filteredData[i].pointsGained} </td>
       <td contenteditable ="true" > ${filteredData[i].limit} </td>
       <td><button onclick="saveChangesEvent(${i})">Save Changes</button>
