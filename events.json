@@ -14,25 +14,11 @@
     "key": 2
   },
   {
-    "event": "Basketball",
-    "eventType": "sports",
-    "pointsGained": 25,
-    "limit": 50,
-    "key": 3
-  },
-  {
     "event": "MIT Visit",
     "eventType": "nonSports",
     "pointsGained": 100,
     "limit": 100,
     "key": 9
-  },
-  {
-    "event": "Ted Talk",
-    "eventType": "nonSports",
-    "pointsGained": 70,
-    "limit": 44,
-    "key": 7
   },
   {
     "event": "Chess",
@@ -49,13 +35,6 @@
     "key": 5
   },
   {
-    "event": "Talent Show",
-    "eventType": "nonSports",
-    "pointsGained": 80,
-    "limit": 19,
-    "key": 8
-  },
-  {
     "event": "NHS Volunteering",
     "eventType": "nonSports",
     "pointsGained": 10,
@@ -68,5 +47,33 @@
     "pointsGained": 10,
     "limit": 77,
     "key": 1
+  },
+  {
+    "event": "Basketball",
+    "eventType": "sports",
+    "pointsGained": 25,
+    "limit": 49,
+    "key": 3
+  },
+  {
+    "event": "Talent Show",
+    "eventType": "nonSports",
+    "pointsGained": 80,
+    "limit": 18,
+    "key": 8
+  },
+  {
+    "event": "Ted Talk",
+    "eventType": "nonSports",
+    "pointsGained": 70,
+    "limit": 42,
+    "key": 7
+  },
+  {
+    "event": "Tets1",
+    "eventType": "nonSports",
+    "pointsGained": 5,
+    "limit": 57,
+    "key": 10
   }
 ]

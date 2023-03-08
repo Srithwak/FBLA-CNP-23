@@ -19,7 +19,7 @@
     "username": "John08",
     "password": "john081",
     "points": 410,
-    "currentPrize": "None",
+    "currentPrize": "KeyChain",
     "admin": false,
     "key": 0,
     "pastEvents": [
@@ -29,7 +29,9 @@
       "Pep Rally",
       "Chess"
     ],
-    "pastPrizes": []
+    "pastPrizes": [
+      "KeyChain"
+    ]
   },
   {
     "name": "Johnson",
@@ -49,7 +51,7 @@
     "username": "rit123",
     "password": "test23",
     "points": 305,
-    "currentPrize": "None",
+    "currentPrize": "KeyChain",
     "admin": false,
     "key": 1,
     "pastEvents": [
@@ -60,7 +62,8 @@
     ],
     "pastPrizes": [
       "Gift Card(50)",
-      "Headphones"
+      "Headphones",
+      "KeyChain"
     ]
   },
   {
@@ -69,14 +72,16 @@
     "username": "Sid06",
     "password": "sidP",
     "points": 678,
-    "currentPrize": "None",
+    "currentPrize": "Gift Card",
     "admin": false,
     "key": 5,
     "pastEvents": [
-      "Chess",
-      "Golf"
+      "Golf",
+      "Chess"
     ],
-    "pastPrizes": []
+    "pastPrizes": [
+      "Gift Card"
+    ]
   },
   {
     "name": "Josh",
@@ -84,17 +89,32 @@
     "username": "joshP",
     "password": "Josh90",
     "points": 23,
-    "admin": false,
+    "admin": true,
     "pastEvents": [
-      "Talent Show",
       "NHS Volunteering",
-      "Football"
+      "Football",
+      "Basketball",
+      "Talent Show",
+      "Ted Talk"
     ],
     "pastPrizes": [
-      "Walkite-Talkie",
+      "Walkie-Talkie",
+      "KeyChain",
       "KeyChain"
     ],
     "key": 2,
-    "currentPrize": "None"
+    "currentPrize": "KeyChain"
+  },
+  {
+    "name": "Ayaan",
+    "grade": "11",
+    "username": "Ayaan1",
+    "password": "ion101",
+    "points": 2,
+    "currentPrize": "None",
+    "admin": false,
+    "key": 6,
+    "pastEvents": [],
+    "pastPrizes": []
   }
 ]

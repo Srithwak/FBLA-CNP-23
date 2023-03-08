@@ -44,7 +44,7 @@ function logIn() {
                 break;
             }
         }
-        if(bol)
-        errorPopup("Username was not found, try again"); //if the username was not found in the database
+        if(bol){}
+            // errorPopup("Username was not found, try again"); //if the username was not found in the database
     }
 }

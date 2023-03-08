@@ -60,5 +60,67 @@
     ],
     "read": false,
     "key": 5
+  },
+  {
+    "type": "message",
+    "name": "Josh",
+    "message": "Message1",
+    "actions": [
+      "delete",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 4
+  },
+  {
+    "type": "prizeAssign",
+    "name": "Josh",
+    "prizeName": "KeyChain",
+    "message": "",
+    "actions": [
+      "delete",
+      "givePrize",
+      "removePrize",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 6
+  },
+  {
+    "type": "adminPriveleges",
+    "name": "Josh",
+    "message": "",
+    "actions": [
+      "delete",
+      "makeAdmin",
+      "removeAdmin",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 7
+  },
+  {
+    "type": "pointChange",
+    "name": "Josh",
+    "pointNum": 23,
+    "message": "",
+    "actions": [
+      "delete",
+      "changePoints",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 8
+  },
+  {
+    "type": "message",
+    "name": "Josh",
+    "message": "Message1",
+    "actions": [
+      "delete",
+      "read/unread"
+    ],
+    "read": false,
+    "key": 9
   }
 ]
